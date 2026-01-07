@@ -1,0 +1,10 @@
+Tachy,P01,Nhanh
+Brady,P02,Chậm
+Peri,P03,Xung quanh
+Epi,P04,Trên
+Hypo,P05,Dưới/Thấp
+Sub,P06,Dưới
+Endo,P07,Bên trong
+Hyper,P08,Cao/Quá mức
+Poly,P09,Nhiều
+Anti,P10,Chống lại

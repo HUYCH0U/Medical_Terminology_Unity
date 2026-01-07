@@ -1,0 +1,12 @@
+itis,S01,Viêm
+oma,S02,Khối u
+algia,S03,Đau
+ectomy,S04,Phẫu thuật cắt bỏ
+logy,S05,Ngành học/Nghiên cứu
+scope,S06,Dụng cụ soi
+gram,S07,Bản ghi/Hình ảnh
+psy,S08,Quan sát/Xem
+ia,S09,Tình trạng
+ic,S10,Thuộc về
+emia,S11,Tình trạng máu
+o,0,Nguyên âm nối

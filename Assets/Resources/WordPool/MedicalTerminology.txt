@@ -1,0 +1,25 @@
+Gastritis,R01S01,Viêm dạ dày
+Arthritis,R02S01,Viêm khớp
+Hepatitis,R03S01,Viêm gan
+Adenoma,R04S02,U tuyến
+Arthralgia,R02S03,Đau khớp
+Dermatitis,R05S01,Viêm da
+Gastrectomy,R01S04,Cắt bỏ dạ dày
+Otitis,R06S01,Viêm tai
+Nephritis,R07S01,Viêm thận
+Angioma,R08S02,U mạch máu
+Cardiology,R090S05,Khoa tim mạch
+Neurology,R100S05,Khoa thần kinh
+Gastroscope,R010S06,Máy nội soi dạ dày
+Dermatology,R050S05,Khoa da liễu
+Radiology,R110S05,Khoa chẩn đoán hình ảnh
+Pathology,R120S05,Bệnh học
+Cardiogram,R090S07,Điện tâm đồ
+Nephrology,R070S05,Khoa thận học
+Hematology,R130S05,Huyết học
+Biopsy,R140S08,Sinh thiết
+Tachycardia,P01R09S09,Nhịp tim nhanh
+Bradycardia,P02R09S09,Nhịp tim chậm
+Pericarditis,P03R09S01,Viêm màng ngoài tim
+Epigastric,P04R01S10,Vùng thượng vị (trên dạ dày)
+Hypodermic,P05R05S10,Dưới da

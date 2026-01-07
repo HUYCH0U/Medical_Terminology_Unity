@@ -1,0 +1,16 @@
+Gastr,R01,Dạ dày
+Arthr,R02,Khớp
+Hepat,R03,Gan
+Aden,R04,Tuyến
+Dermat,R05,Da
+Ot,R06,Tai
+Nephr,R07,Thận
+Angi,R08,Mạch máu
+Cardi,R09,Tim
+Neur,R10,Thần kinh
+Radi,R11,Tia/Phóng xạ
+Path,R12,Bệnh tật
+Hemat,R13,Máu
+Bi,R14,Sự sống
+Pneumon,R15,Phổi
+Glyc,R16,Đường
