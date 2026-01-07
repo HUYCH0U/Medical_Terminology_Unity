@@ -1,0 +1,25 @@
+R01S01|______ là tình trạng viêm niêm mạc dạ dày.
+R02S01|______ gây đau và sưng tấy ở các khớp.
+R03S01|Uống quá nhiều rượu có thể dẫn đến ______.
+R04S02|______ là một khối u lành tính của mô tuyến.
+R02S03|Bệnh nhân than phiền vì bị ______ dữ dội.
+R05S01|______ là thuật ngữ chung chỉ tình trạng kích ứng da.
+R01S04|______ là phẫu thuật cắt bỏ toàn bộ hoặc một phần dạ dày.
+R06S01|______ là tình trạng viêm tai.
+R07S01|______ là tình trạng viêm thận.
+R08S02|______ là sự tăng trưởng lành tính bao gồm các mạch máu nhỏ.
+R090S05|______ là ngành nghiên cứu về tim và các bệnh lý tim mạch.
+R100S05|______ chuyên về các rối loạn của hệ thần kinh.
+R010S06|______ được dùng để quan sát bên trong dạ dày.
+R050S05|______ là chuyên ngành y khoa về da liễu.
+R110S05|______ sử dụng hình ảnh để chẩn đoán và điều trị bệnh.
+R120S05|______ là nghiên cứu về nguyên nhân và ảnh hưởng của bệnh tật.
+R090S07|______ là xét nghiệm ghi lại hoạt động điện của tim.
+R070S05|______ là chuyên khoa y tế liên quan đến thận.
+R130S05|______ là ngành nghiên cứu về máu và các rối loạn máu.
+R140S08|______ là thủ thuật lấy một mẫu mô hoặc tế bào để xét nghiệm.
+P01R09S09|______ chỉ tình trạng nhịp tim nhanh.
+P02R09S09|______ là tình trạng nhịp tim chậm hơn bình thường.
+P03R09S01|______ là tình trạng viêm màng ngoài tim.
+P04R01S10|Đau ở vùng ______ thường gặp trong bệnh viêm dạ dày.
+P05R05S10|Kim ______ được dùng để tiêm thuốc vào dưới da.

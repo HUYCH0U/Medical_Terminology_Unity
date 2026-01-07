@@ -15,11 +15,16 @@ public class StartMenu : MonoBehaviour
         turn = GameObject.Find("Canvas/Turn").GetComponent<TMP_InputField>();
     }
 
-    public void StartGame()
+    public void StartMainGame()
     {
         PlayerPrefs.SetInt("Time", int.TryParse(time.text, out int Time) ? Time : 60);
         PlayerPrefs.SetInt("Turn", int.TryParse(turn.text, out int Turn) ? Turn : 3);
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
+    }
+
+    public void StartPuzzleGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("PuzzleMissionScene");
     }
 
     public void Exit()

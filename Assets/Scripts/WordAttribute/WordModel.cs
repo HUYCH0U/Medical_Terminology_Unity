@@ -34,4 +34,9 @@ public class WordModel
         quizAnswers = answers;
         correctApologetic = correctAns;
     }
+
+      public string getcode()
+    {
+        return idvalue;
+    }
 }

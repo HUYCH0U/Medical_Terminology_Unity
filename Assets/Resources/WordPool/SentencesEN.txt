@@ -1,0 +1,25 @@
+R01S01|______ is the inflammation of the stomach lining.
+R02S01|______ causes pain and swelling in the joints.
+R03S01|Drinking too much alcohol can lead to ______.
+R04S02|An ______ is a benign tumor of glandular tissue.
+R02S03|The patient complained of severe ______.
+R05S01|______ is a general term that describes skin irritation.
+R01S04|A ______ is the surgical removal of all or part of the stomach.
+R06S01|______ is an inflammation of the ear.
+R07S01|______ is inflammation of the kidneys.
+R08S02|An ______ is a benign growth that consists of small blood vessels.
+R090S05|______ is the study of the heart and its diseases.
+R100S05|______ deals with disorders of the nervous system.
+R010S06|A ______ is used to look inside the stomach.
+R050S05|______ is the branch of medicine dealing with the skin.
+R110S05|______ uses imaging to diagnose and treat diseases.
+R120S05|______ is the study of the causes and effects of disease or injury.
+R090S07|A ______ is a test that records the electrical activity of your heart.
+R070S05|______ is the specialty of medicine and pediatrics that concerns the kidneys.
+R130S05|______ is the study of blood and blood disorders.
+R140S08|A ______ is a procedure to remove a piece of tissue or a sample of cells.
+P01R09S09|______ refers to a fast heart rate.
+P02R09S09|______ is a slower than normal heart rate.
+P03R09S01|______ is inflammation of the pericardium.
+P04R01S10|Pain in the ______ region is common in gastritis.
+P05R05S10|A ______ needle is used to inject substances under the skin.
