@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         {
             EndGameFlag = true;
             ClearAllSlots();
-            if (TopicText != null) TopicText.text = "GAME OVER";
+            if (TopicText != null) TopicText.text = "GAMEe OVER";
             DisplayText.text = "FINAL SCORE: " + score.ToString();
             RestartButton.gameObject.SetActive(true);
             BackToMenuButton.gameObject.SetActive(true);
