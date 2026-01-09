@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PuzzleMissionScene.unity
     guid: 5f38bf4c2701bf04090c67af5d22a5f5
+  - enabled: 1
+    path: Assets/Scenes/StudyWord.unity
+    guid: bafad4f1888f3024e8cb172badf326d3
   m_configObjects: {}

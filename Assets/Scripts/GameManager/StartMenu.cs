@@ -26,6 +26,9 @@ public class StartMenu : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("PuzzleMissionScene");
     }
+    public void StudyMode(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StudyWord");
+    }
 
     public void Exit()
     {

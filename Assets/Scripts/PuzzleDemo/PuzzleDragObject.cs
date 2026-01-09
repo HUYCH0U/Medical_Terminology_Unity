@@ -112,9 +112,13 @@ public class PuzzleDragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             transform.SetParent(target);
             transform.localPosition = Vector3.zero;
            
-            if (PuzzleGameManager.Instance != null)
+            if (PuzzleGameManager.Instance != null && PuzzleGameManager.Instance.gameObject.activeInHierarchy)
             {
                 PuzzleGameManager.Instance.CheckSlots();
+            }
+            else if (StudyManager.Instance != null && StudyManager.Instance.gameObject.activeInHierarchy)
+            {
+                StudyManager.Instance.CheckSlots(); 
             }
         }
     }
