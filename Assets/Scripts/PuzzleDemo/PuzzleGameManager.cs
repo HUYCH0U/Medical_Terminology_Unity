@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Text;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PuzzleGameManager : MonoBehaviour
 {
@@ -244,5 +245,8 @@ public class PuzzleGameManager : MonoBehaviour
         isGameActive = false;
         MissionTitleText.text = "GAME OVER";
         QuestionContentText.text = "Final Score: " + currentScore;
+    }
+     public void Menu(){
+        SceneManager.LoadScene("StartMenu");
     }
 }
