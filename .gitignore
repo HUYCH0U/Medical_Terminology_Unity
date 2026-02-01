@@ -53,3 +53,5 @@ ExportedObj/
 /[Aa]ssets/Plugins/iOS/
 
 !*.[Mm]eta
+
+.agent
