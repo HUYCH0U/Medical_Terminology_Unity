@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Slot
-  - Card
-  - Discard
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -43,13 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Board
-    uniqueID: 2954748271
-    locked: 0
-  - name: Slot
-    uniqueID: 2680271175
-    locked: 0
-  - name: Card
-    uniqueID: 1717404011
     locked: 0
