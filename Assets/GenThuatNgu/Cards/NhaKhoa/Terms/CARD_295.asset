@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_295
+  m_EditorClassIdentifier: 
+  _id: CARD_295
+  _termEnglish: Undercut (prosthodontic)
+  _termVietnamese: "V\xF9ng undercut"
+  _category: 2
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Area below height of contour used for clasping. Vietnamese: V\xF9ng
+    n\u1EB1m d\u01B0\u1EDBi \u0111\u01B0\u1EDDng k\xEDnh l\u1EDBn nh\u1EA5t d\xF9ng
+    cho m\xF3c gi\u1EEF"
+  _structure: "Under (d\u01B0\u1EDBi) + cut (c\u1EAFt)"

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_299
+  m_EditorClassIdentifier: 
+  _id: CARD_299
+  _termEnglish: "Camper\u2019s plane"
+  _termVietnamese: "M\u1EB7t ph\u1EB3ng Camper"
+  _category: 3
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Plane from ala of nose to tragus used as reference. Vietnamese:
+    M\u1EB7t ph\u1EB3ng t\u1EEB c\xE1nh m\u0169i \u0111\u1EBFn tai d\xF9ng l\xE0m
+    m\u1ED1c"
+  _structure: Eponym Camper + plane

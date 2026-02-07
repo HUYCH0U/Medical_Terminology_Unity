@@ -3,99 +3,158 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
-public class CardDisplay : MonoBehaviour
+namespace MedicalTerminology.UI
 {
-    [Header("--- FRONT SIDE (Mặt Trước) ---")]
-    public GameObject frontObj;
-    public TextMeshProUGUI textTitleEn;
-    public TextMeshProUGUI textTitleVi;
-    public Image imageMain;
-    public Image imageBorder;
+    using Core;
 
-    [Header("--- BACK SIDE (Mặt Sau) ---")]
-    public GameObject backObj;
-    public TextMeshProUGUI textStructure;
-    public TextMeshProUGUI textDescription;
-
-    [Header("--- RESOURCES ---")]
-    public Sprite borderCommon;
-    public Sprite borderRare;
-    public Sprite borderLegendary;
-
-    private bool isFlipped = false;
-    private bool isAnimating = false;
-    private CardDataSO currentData;
-
-    void Start()
+    /// <summary>
+    /// Displays card information with flip animation.
+    /// Optimized with component caching and TMP features.
+    /// </summary>
+    [RequireComponent(typeof(Button))]
+    public class CardDisplay : MonoBehaviour
     {
-        frontObj.SetActive(true);
-        backObj.SetActive(false);
+        [Header("--- FRONT SIDE (Mặt Trước) ---")]
+        [SerializeField] private GameObject frontObj;
+        [SerializeField] private TextMeshProUGUI textTitleEn;
+        [SerializeField] private TextMeshProUGUI textTitleVi;
+        [SerializeField] private Image imageMain;
+        [SerializeField] private Image imageBorder;
 
-        Button btn = GetComponent<Button>();
-        if (btn != null)
-        {
-            btn.onClick.AddListener(OnCardClicked);
-        }
-    }
+        [Header("--- BACK SIDE (Mặt Sau) ---")]
+        [SerializeField] private GameObject backObj;
+        [SerializeField] private TextMeshProUGUI textStructure;
+        [SerializeField] private TextMeshProUGUI textDescription;
 
-    public void SetupData(CardDataSO data)
-    {
-        currentData = data;
+        [Header("--- RESOURCES ---")]
+        [SerializeField] private Sprite borderCommon;
+        [SerializeField] private Sprite borderRare;
+        [SerializeField] private Sprite borderLegendary;
 
-        textTitleEn.text = data.termEnglish.ToUpper();
-        textTitleVi.text = data.termVietnamese;
-        if (data.illustration != null) imageMain.sprite = data.illustration;
-
-        switch (data.rarity)
-        {
-            case CardRarity.Common:    imageBorder.sprite = borderCommon;    break;
-            case CardRarity.Rare:      imageBorder.sprite = borderRare;      break;
-            case CardRarity.Legendary: imageBorder.sprite = borderLegendary; break;
-        }
-
-        textStructure.text = string.IsNullOrEmpty(data.structure) 
-            ? "" 
-            : $"<color=yellow>{data.structure}</color>";
+        // Cached components
+        private RectTransform _rectTransform;
+        private Button _button;
         
-        textDescription.text = data.description;
-    }
+        private bool _isFlipped;
+        private bool _isAnimating;
+        private CardDataSO _currentData;
 
-    public void OnCardClicked()
-    {
-        if (isAnimating) return;
-        StartCoroutine(FlipCoroutine());
-    }
-
-    IEnumerator FlipCoroutine()
-    {
-        isAnimating = true;
-        float duration = 0.2f;
-        float time = 0;
-
-        Vector3 originalScale = transform.localScale;
-
-        while (time < duration)
+        private void Awake()
         {
-            time += Time.deltaTime;
-            float scaleX = Mathf.Lerp(1, 0, time / duration);
-            transform.localScale = new Vector3(scaleX, originalScale.y, originalScale.z);
-            yield return null;
+            // Cache components for performance
+            _rectTransform = GetComponent<RectTransform>();
+            _button = GetComponent<Button>();
+            
+            ValidateReferences();
         }
 
-        isFlipped = !isFlipped;
-        frontObj.SetActive(!isFlipped);
-        backObj.SetActive(isFlipped);
-
-        time = 0;
-        while (time < duration)
+        private void Start()
         {
-            time += Time.deltaTime;
-            float scaleX = Mathf.Lerp(0, 1, time / duration);
-            transform.localScale = new Vector3(scaleX, originalScale.y, originalScale.z);
-            yield return null;
+            frontObj.SetActive(true);
+            backObj.SetActive(false);
+
+            if (_button != null)
+            {
+                _button.onClick.AddListener(OnCardClicked);
+            }
         }
 
-        transform.localScale = originalScale;
-        isAnimating = false;
+        /// <summary>
+        /// Setup card with data. Optimized with TMP features.
+        /// </summary>
+        public void SetupData(CardDataSO data)
+        {
+            if (data == null)
+            {
+                Debug.LogError("[CardDisplay] Cannot setup with null data!", this);
+                return;
+            }
+
+            _currentData = data;
+
+            // Use TMP UpperCase feature instead of string allocation
+            textTitleEn.SetText(data.termEnglish);
+            textTitleEn.fontStyle = FontStyles.UpperCase;
+            
+            textTitleVi.SetText(data.termVietnamese);
+            
+            if (data.illustration != null)
+            {
+                imageMain.sprite = data.illustration;
+            }
+
+            // Set border based on rarity
+            imageBorder.sprite = data.rarity switch
+            {
+                CardRarity.Common => borderCommon,
+                CardRarity.Rare => borderRare,
+                CardRarity.Legendary => borderLegendary,
+                _ => borderCommon
+            };
+
+            // Structure text with rich text
+            if (!string.IsNullOrEmpty(data.structure))
+            {
+                textStructure.SetText($"<color=yellow>{data.structure}</color>");
+            }
+            else
+            {
+                textStructure.SetText("");
+            }
+            
+            textDescription.SetText(data.description);
+        }
+
+        private void ValidateReferences()
+        {
+#if UNITY_EDITOR
+            if (frontObj == null) Debug.LogError($"[CardDisplay] frontObj not assigned on '{gameObject.name}'", this);
+            if (backObj == null) Debug.LogError($"[CardDisplay] backObj not assigned on '{gameObject.name}'", this);
+            if (textTitleEn == null) Debug.LogError($"[CardDisplay] textTitleEn not assigned on '{gameObject.name}'", this);
+            if (textTitleVi == null) Debug.LogError($"[CardDisplay] textTitleVi not assigned on '{gameObject.name}'", this);
+#endif
+        }
+
+        public void OnCardClicked()
+        {
+            if (_isAnimating) return;
+            StartCoroutine(FlipCoroutine());
+        }
+
+        private IEnumerator FlipCoroutine()
+        {
+            _isAnimating = true;
+            const float duration = 0.2f;
+            float elapsed = 0f;
+
+            Vector3 originalScale = _rectTransform.localScale;
+
+            // Shrink (hide current side)
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float scaleX = Mathf.Lerp(1f, 0f, elapsed / duration);
+                _rectTransform.localScale = new Vector3(scaleX, originalScale.y, originalScale.z);
+                yield return null;
+            }
+
+            // Switch sides
+            _isFlipped = !_isFlipped;
+            frontObj.SetActive(!_isFlipped);
+            backObj.SetActive(_isFlipped);
+
+            // Expand (show new side)
+            elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float scaleX = Mathf.Lerp(0f, 1f, elapsed / duration);
+                _rectTransform.localScale = new Vector3(scaleX, originalScale.y, originalScale.z);
+                yield return null;
+            }
+
+            _rectTransform.localScale = originalScale;
+            _isAnimating = false;
+        }
     }
 }

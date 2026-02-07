@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_255
+  m_EditorClassIdentifier: 
+  _id: CARD_255
+  _termEnglish: Centric relation record
+  _termVietnamese: "Ghi t\u01B0\u01A1ng quan trung t\xE2m"
+  _category: 1
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Record of jaw relation independent of tooth contact. Vietnamese:
+    Ghi t\u01B0\u01A1ng quan hai h\xE0m kh\xF4ng ph\u1EE5 thu\u1ED9c ti\u1EBFp x\xFAc
+    r\u0103ng"
+  _structure: Centric relation + record

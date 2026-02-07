@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_268
+  m_EditorClassIdentifier: 
+  _id: CARD_268
+  _termEnglish: Relining
+  _termVietnamese: "L\xF3t l\u1EA1i (reline)"
+  _category: 1
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Replacing the intaglio surface to improve fit. Vietnamese: Thay
+    b\u1EC1 m\u1EB7t trong \u0111\u1EC3 c\u1EA3i thi\u1EC7n \u0111\u1ED9 kh\xEDt"
+  _structure: "Re- (l\u1EA1i) + lining (l\xF3t)"

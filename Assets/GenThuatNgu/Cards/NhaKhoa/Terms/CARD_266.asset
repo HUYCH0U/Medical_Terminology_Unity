@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_266
+  m_EditorClassIdentifier: 
+  _id: CARD_266
+  _termEnglish: Tissue conditioner
+  _termVietnamese: "V\u1EADt li\u1EC7u \u0111i\u1EC1u ki\u1EC7n m\xF4"
+  _category: 0
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Viscoelastic material to treat abused tissues under dentures. Vietnamese:
+    V\u1EADt li\u1EC7u \u0111\xE0n nh\u1EDB d\xF9ng c\u1EA3i thi\u1EC7n m\xF4 d\u01B0\u1EDBi
+    h\xE0m gi\u1EA3"
+  _structure: "Tissue (m\xF4) + condition (\u0111i\u1EC1u ki\u1EC7n) + -er"

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_236
+  m_EditorClassIdentifier: 
+  _id: CARD_236
+  _termEnglish: Gingival retraction cord
+  _termVietnamese: "Ch\u1EC9 co n\u01B0\u1EDBu"
+  _category: 1
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Cord placed in sulcus to displace gingiva and control fluids. Vietnamese:
+    S\u1EE3i ch\u1EC9 \u0111\u1EB7t v\xE0o khe n\u01B0\u1EDBu \u0111\u1EC3 v\xE9n
+    m\xF4 v\xE0 ki\u1EC3m so\xE1t d\u1ECBch"
+  _structure: "Gingiv (n\u01B0\u1EDBu) + retraction (k\xE9o) + cord (s\u1EE3i)"

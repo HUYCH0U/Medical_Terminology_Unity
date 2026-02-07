@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_284
+  m_EditorClassIdentifier: 
+  _id: CARD_284
+  _termEnglish: Fulcrum line
+  _termVietnamese: "\u0110\u01B0\u1EDDng tr\u1EE5c b\u1EA3n l\u1EC1"
+  _category: 2
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Imaginary line about which denture tends to rotate. Vietnamese:
+    \u0110\u01B0\u1EDDng t\u01B0\u1EDFng t\u01B0\u1EE3ng quanh \u0111\xF3 h\xE0m
+    c\xF3 xu h\u01B0\u1EDBng xoay"
+  _structure: "Fulcrum (\u0111i\u1EC3m t\u1EF1a) + line"

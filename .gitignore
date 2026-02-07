@@ -55,3 +55,7 @@ ExportedObj/
 !*.[Mm]eta
 
 .agent
+
+/Assets/ImportedPackage/FastScriptReload
+/Assets/ImportedPackage/GUI Kit Casual Game/PSD
+/Assets/ImportedPackage/GUI Kit Casual Game/Scenes

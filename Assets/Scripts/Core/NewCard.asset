@@ -18,7 +18,7 @@ MonoBehaviour:
   category: 0
   wordType: 0
   rarity: 0
-  illustration: {fileID: 0}
-  iconType: {fileID: 0}
+  illustration: {fileID: 21300000, guid: d41f235ea03936447af6df17d454903c, type: 3}
+  iconType: {fileID: 21300000, guid: 0f2a145cf77f0ad478c2117436936bcf, type: 3}
   description: asdasdasd
   structure: zxczxczxczxczxc

@@ -1,0 +1,31 @@
+ID,TermEnglish,TermVietnamese,Prefix,Root,Suffix,Description,Category,Rarity,Specialty,Structure
+CARD_001,Gastritis,Viêm dạ dày,,Gastr,itis,Inflammation of the stomach,Biological,Common,Gastrology,Gastr + itis
+CARD_002,Arthritis,Viêm khớp,,Arthr,itis,Inflammation of joints,Biological,Common,Orthopedics,Arthr + itis
+CARD_003,Hepatitis,Viêm gan,,Hepat,itis,Inflammation of the liver,Biological,Common,Gastrology,Hepat + itis
+CARD_004,Adenoma,U tuyến,,Aden,oma,Tumor of glandular tissue,Biological,Common,Oncology,Aden + oma
+CARD_005,Arthralgia,Đau khớp,,Arthr,algia,Joint pain,Biological,Common,Orthopedics,Arthr + algia
+CARD_006,Dermatitis,Viêm da,,Dermat,itis,Inflammation of the skin,Biological,Common,Dermatology,Dermat + itis
+CARD_007,Gastrectomy,Cắt bỏ dạ dày,,Gastr,ectomy,Surgical removal of the stomach,Biological,Common,Gastrology,Gastr + ectomy
+CARD_008,Otitis,Viêm tai,,Ot,itis,Inflammation of the ear,Biological,Common,ENT,Ot + itis
+CARD_009,Nephritis,Viêm thận,,Nephr,itis,Inflammation of the kidney,Biological,Common,Urology,Nephr + itis
+CARD_010,Angioma,U mạch máu,,Angi,oma,Tumor of blood vessels,Biological,Common,Oncology,Angi + oma
+CARD_011,Cardiology,Khoa tim mạch,,Cardio,logy,Study of the heart,Biological,Common,Cardiology,Cardio + logy
+CARD_012,Neurology,Khoa thần kinh,,Neuro,logy,Study of the nervous system,Biological,Common,Neurology,Neuro + logy
+CARD_013,Gastroscope,Máy nội soi dạ dày,,Gastro,scope,Instrument to examine the stomach,Material,Common,Gastrology,Gastro + scope
+CARD_014,Dermatology,Khoa da liễu,,Dermato,logy,Study of the skin,Biological,Common,Dermatology,Dermato + logy
+CARD_015,Radiology,Khoa chẩn đoán hình ảnh,,Radio,logy,Study of X-rays and imaging,Material,Common,General,Radio + logy
+CARD_016,Pathology,Bệnh học,,Patho,logy,Study of disease,Biological,Common,General,Patho + logy
+CARD_017,Cardiogram,Điện tâm đồ,,Cardio,gram,Record of heart activity,Material,Common,Cardiology,Cardio + gram
+CARD_018,Nephrology,Khoa thận học,,Nephro,logy,Study of the kidney,Biological,Common,Urology,Nephro + logy
+CARD_019,Hematology,Huyết học,,Hemato,logy,Study of blood,Biological,Common,General,Hemato + logy
+CARD_020,Biopsy,Sinh thiết,,Bio,psy,Examination of living tissue,Biological,Common,General,Bio + psy
+CARD_021,Tachycardia,Nhịp tim nhanh,Tachy,,Cardi,ia,Rapid heart rate,Biological,Common,Cardiology,Tachy + Cardi + ia
+CARD_022,Bradycardia,Nhịp tim chậm,Brady,,Cardi,ia,Slow heart rate,Biological,Common,Cardiology,Brady + Cardi + ia
+CARD_023,Pericarditis,Viêm màng ngoài tim,Peri,,Cardi,itis,Inflammation around the heart,Biological,Common,Cardiology,Peri + Cardi + itis
+CARD_024,Epigastric,Vùng thượng vị,Epi,,Gastr,ic,Above the stomach,Morphological,Common,Gastrology,Epi + Gastr + ic
+CARD_025,Hypodermic,Dưới da,Hypo,,Derm,ic,Under the skin,Morphological,Common,Dermatology,Hypo + Derm + ic
+CARD_026,Subhepatic,Dưới gan,Sub,,Hepat,ic,Below the liver,Morphological,Common,Gastrology,Sub + Hepat + ic
+CARD_027,Endocarditis,Viêm nội tâm mạc,Endo,,Cardi,itis,Inflammation of heart lining,Biological,Common,Cardiology,Endo + Cardi + itis
+CARD_028,Hyperglycemia,Đường huyết cao,Hyper,,Glyc,emia,High blood sugar,Biological,Common,Endocrinology,Hyper + Glyc + emia
+CARD_029,Hypoglycemia,Đường huyết thấp,Hypo,,Glyc,emia,Low blood sugar,Biological,Common,Endocrinology,Hypo + Glyc + emia
+CARD_030,Polyneuritis,Viêm đa dây thần kinh,Poly,,Neur,itis,Inflammation of multiple nerves,Biological,Common,Neurology,Poly + Neur + itis

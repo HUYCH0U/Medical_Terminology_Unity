@@ -1,10 +1,36 @@
 using UnityEngine;
 
-public class TestCard : MonoBehaviour
+namespace MedicalTerminology.Testing
 {
-    public CardDataSO dataToTest; 
-    void Start()
+    using Core;
+    using UI;
+
+    /// <summary>
+    /// Simple test script to display a card with provided ScriptableObject data.
+    /// Attach to a GameObject with CardDisplay component.
+    /// </summary>
+    [RequireComponent(typeof(CardDisplay))]
+    public class CardTest : MonoBehaviour
     {
-        GetComponent<CardDisplay>().SetupData(dataToTest);
+        [SerializeField] private CardDataSO dataToTest;
+
+        private void Start()
+        {
+            if (dataToTest == null)
+            {
+                Debug.LogWarning("[CardTest] No card data assigned to test!", this);
+                return;
+            }
+
+            var cardDisplay = GetComponent<CardDisplay>();
+            if (cardDisplay != null)
+            {
+                cardDisplay.SetupData(dataToTest);
+            }
+            else
+            {
+                Debug.LogError("[CardTest] CardDisplay component not found!", this);
+            }
+        }
     }
 }

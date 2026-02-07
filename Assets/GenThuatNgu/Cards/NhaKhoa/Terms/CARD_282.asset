@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_282
+  m_EditorClassIdentifier: 
+  _id: CARD_282
+  _termEnglish: RPI system
+  _termVietnamese: "H\u1EC7 th\u1ED1ng RPI"
+  _category: 1
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Rest\u2013Proximal plate\u2013I-bar clasp design for stress release.
+    Vietnamese: Thi\u1EBFt k\u1EBF G\u1EDD t\u1EF1a\u2013B\u1EA3n g\u1EA7n\u2013M\xF3c
+    I-bar gi\u1EA3m \u1EE9ng su\u1EA5t"
+  _structure: R (rest) + P (proximal plate) + I (I-bar)

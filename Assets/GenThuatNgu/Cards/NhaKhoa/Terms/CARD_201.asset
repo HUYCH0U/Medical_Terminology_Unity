@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_201
+  m_EditorClassIdentifier: 
+  _id: CARD_201
+  _termEnglish: Full coverage crown
+  _termVietnamese: "M\xE3o to\xE0n s\u1EE9/kim lo\u1EA1i to\xE0n di\u1EC7n"
+  _category: 1
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Restoration covering all axial surfaces of the clinical crown. Vietnamese:
+    Ph\u1EE5c h\xECnh ph\u1EE7 to\xE0n b\u1ED9 b\u1EC1 m\u1EB7t th\xE2n r\u0103ng
+    l\xE2m s\xE0ng"
+  _structure: "Full (to\xE0n) + coverage (ph\u1EE7) + crown (m\xE3o)"

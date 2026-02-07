@@ -1,0 +1,11 @@
+ID,TermEnglish,TermVietnamese,Prefix,Root,Suffix,Description,Category,Rarity,Specialty,Structure
+CARD_001,Gastritis,Viêm dạ dày,,Gastr,itis,Inflammation of the stomach lining,Biological,Common,Gastrology,Gastr + itis
+CARD_002,Gastrology,Tiêu hóa học,,Gastr,logy,Study of the stomach and digestive system,Biological,Rare,Gastrology,Gastr + logy
+CARD_003,Cardiology,Tim mạch học,,Cardio,logy,Study of the heart,Biological,Rare,Cardiology,Cardio + logy
+CARD_004,Cardiopathy,Bệnh tim,,Cardio,pathy,Disease of the heart,Biological,Common,Cardiology,Cardio + pathy
+P_001,Pre-,Tiền-,Pre,,,Prefix meaning before,Identifier,Common,General,
+R_001,Gastr,Dạ dày,,Gastr,,Root meaning stomach,Biological,Common,Gastrology,
+R_002,Cardio,Tim,,Cardio,,Root meaning heart,Biological,Common,Cardiology,
+S_001,-itis,Viêm,,,itis,Suffix meaning inflammation,Morphological,Common,General,
+S_002,-logy,Học,,,logy,Suffix meaning study of,Identifier,Common,General,
+S_003,-pathy,Bệnh,,,pathy,Suffix meaning disease,Morphological,Common,General,

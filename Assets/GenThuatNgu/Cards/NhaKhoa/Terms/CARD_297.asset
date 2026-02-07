@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_297
+  m_EditorClassIdentifier: 
+  _id: CARD_297
+  _termEnglish: Occlusal plane (denture)
+  _termVietnamese: "M\u1EB7t ph\u1EB3ng c\u1EAFn (h\xE0m gi\u1EA3)"
+  _category: 1
+  _wordType: 3
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Plane established by wax rims for denture teeth arrangement. Vietnamese:
+    M\u1EB7t ph\u1EB3ng \u0111\u01B0\u1EE3c x\xE1c l\u1EADp b\u1EB1ng v\xE0nh s\xE1p
+    \u0111\u1EC3 s\u1EAFp r\u0103ng"
+  _structure: Occlusal + plane

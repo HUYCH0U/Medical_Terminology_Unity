@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_289
+  m_EditorClassIdentifier: 
+  _id: CARD_289
+  _termEnglish: Kennedy Class I
+  _termVietnamese: "Ph\xE2n lo\u1EA1i Kennedy lo\u1EA1i I"
+  _category: 3
+  _wordType: 2
+  _rarity: 0
+  _specialty: 1
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "Bilateral edentulous areas posterior to remaining teeth. Vietnamese:
+    M\u1EA5t r\u0103ng hai ph\xEDa sau r\u0103ng c\xF2n l\u1EA1i"
+  _structure: 

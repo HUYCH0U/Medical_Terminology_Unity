@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d74bc26f06d843b2e192b64cc4a80, type: 3}
+  m_Name: CARD_260
+  m_EditorClassIdentifier: 
+  _id: CARD_260
+  _termEnglish: Anterior deprogrammer
+  _termVietnamese: "Kh\xED c\u1EE5 kh\u1EED ch\u01B0\u01A1ng tr\u01B0\u1EDBc"
+  _category: 0
+  _wordType: 3
+  _rarity: 0
+  _specialty: 0
+  _illustration: {fileID: 0}
+  _iconType: {fileID: 0}
+  _description: "\"Device to disengage posterior teeth and relax muscles. Vietnamese:
+    Kh\xED c\u1EE5 l\xE0m m\u1EA5t ch\u1EA1m r\u0103ng sau"
+  _structure: Dentistry
