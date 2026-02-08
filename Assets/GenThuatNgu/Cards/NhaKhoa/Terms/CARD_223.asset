@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Resin-based luting material with adhesive properties. Vietnamese:
     Xi m\u0103ng g\u1ED1c nh\u1EF1a c\xF3 t\xEDnh d\xE1n d\xEDnh"
-  _structure: "Resin (nh\u1EF1a) + cement"
+  _structure: R_Resin + S_cement

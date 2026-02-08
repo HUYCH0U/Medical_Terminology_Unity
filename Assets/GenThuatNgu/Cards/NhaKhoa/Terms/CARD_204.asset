@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Indirect restoration within cusps of a tooth. Vietnamese: Ph\u1EE5c
     h\xECnh gi\xE1n ti\u1EBFp n\u1EB1m trong ranh m\xFAi r\u0103ng"
-  _structure: "In (trong) + lay (\u0111\u1EB7t)"
+  _structure: R_In + S_lay

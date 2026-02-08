@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Temporary restoration protecting prepared tooth. Vietnamese: Ph\u1EE5c
     h\xECnh t\u1EA1m th\u1EDDi b\u1EA3o v\u1EC7 r\u0103ng \u0111\xE3 m\xE0i"
-  _structure: "Provisional (t\u1EA1m) + restoration"
+  _structure: R_Provisional + S_restoration

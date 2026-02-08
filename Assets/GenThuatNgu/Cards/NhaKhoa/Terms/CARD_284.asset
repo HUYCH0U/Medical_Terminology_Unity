@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Imaginary line about which denture tends to rotate. Vietnamese:
     \u0110\u01B0\u1EDDng t\u01B0\u1EDFng t\u01B0\u1EE3ng quanh \u0111\xF3 h\xE0m
     c\xF3 xu h\u01B0\u1EDBng xoay"
-  _structure: "Fulcrum (\u0111i\u1EC3m t\u1EF1a) + line"
+  _structure: R_Fulcrum + S_line

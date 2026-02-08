@@ -39,7 +39,10 @@ namespace MedicalTerminology.Managers
         [Header("Game Mode Configuration")]
         [SerializeField] private GameMode gameMode = GameMode.Puzzle;
         [SerializeField] private int missionCount = 5; // For Study mode only
-        [SerializeField] private float levelTime = 120f;
+        [SerializeField] private float levelTime = 1200f;
+        
+        [Header("Difficulty Settings")]
+        [SerializeField] [Range(0f, 1f)] private float wrongSpawnChance = 0.3f; // 30% chance to spawn wrong cards on reset
 
         [Header("Data References")]
         [SerializeField] private CardDataManager dataManager;
@@ -95,6 +98,7 @@ namespace MedicalTerminology.Managers
         private List<WordModel> _missionList = new List<WordModel>();
         private HashSet<string> _completedMissionIds = new HashSet<string>();
         private Dictionary<string, MissionItemUI> _missionUiMap = new Dictionary<string, MissionItemUI>();
+        private Dictionary<string, string> _missionContentMap = new Dictionary<string, string>(); // Store display content
 
         #region Unity Lifecycle
 
@@ -109,11 +113,9 @@ namespace MedicalTerminology.Managers
                 // Subscribe to scene loaded events (runs EVERY scene change!)
                 SceneManager.sceneLoaded += OnSceneLoaded;
                 
-                Debug.Log("[GameManager] Singleton created and persisted");
             }
             else
             {
-                Debug.LogWarning("[GameManager] Duplicate instance destroyed");
                 Destroy(gameObject);
                 return; // Exit early - this instance is dead
             }
@@ -143,7 +145,6 @@ namespace MedicalTerminology.Managers
             
             if (currentScene == "StartMenu" || currentScene == "Lobby")
             {
-                Debug.Log($"[GameManager] In {currentScene} - No gameplay setup (menu)");
                 return; // Don't initialize game logic in menus
             }
 
@@ -152,12 +153,10 @@ namespace MedicalTerminology.Managers
                 resetButton.onClick.AddListener(OnResetClick);
             }
 
-            Debug.Log($"🟢 [GameManager] Start() called in scene: {currentScene}");
-            Debug.Log($"[GameManager] GameMode: {gameMode}");
-            Debug.Log($"[GameManager] DataManager: {(dataManager != null ? "✅ Assigned" : "❌ NULL")}");
-            Debug.Log($"[GameManager] TokenSpawnArea: {(tokenSpawnArea != null ? "✅ Assigned" : "❌ NULL")}");
-            Debug.Log($"[GameManager] CardPrefab: {(cardPrefab != null ? "✅ Assigned" : "❌ NULL")}");
-            Debug.Log($"[GameManager] SlotTransforms: {(slotTransforms != null ? $"✅ {slotTransforms.Length} slots" : "❌ NULL")}");
+            // Debug.Log($"[GameManager] DataManager: {(dataManager != null ? "✅ Assigned" : "❌ NULL")}");
+            // Debug.Log($"[GameManager] TokenSpawnArea: {(tokenSpawnArea != null ? "✅ Assigned" : "❌ NULL")}");
+            // Debug.Log($"[GameManager] CardPrefab: {(cardPrefab != null ? "✅ Assigned" : "❌ NULL")}");
+            // Debug.Log($"[GameManager] SlotTransforms: {(slotTransforms != null ? $"✅ {slotTransforms.Length} slots" : "❌ NULL")}");
             
             if (resetButton != null)
             {
@@ -173,23 +172,19 @@ namespace MedicalTerminology.Managers
         /// </summary>
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            Debug.Log($"🔵 [GameManager] OnSceneLoaded: {scene.name} (Mode: {mode})");
             
             string sceneName = scene.name;
             
             // Skip menu scenes - no gameplay initialization needed
             if (sceneName == "StartMenu" || sceneName == "Lobby")
             {
-                Debug.Log($"[GameManager] Menu scene '{sceneName}' - No gameplay initialization");
                 return;
             }
             
             // For gameplay scenes (StudyWord, MainGame), wait for SceneSetup to assign references
             // Then initialize gameplay
             if (sceneName == "StudyWord" || sceneName == "MainGame")
-            {
-                Debug.Log($"🟢 [GameManager] Gameplay scene '{sceneName}' detected - Starting initialization...");
-                
+            {                
                 // Wait a frame for SceneSetup to complete, then initialize
                 StartCoroutine(InitializeAfterSceneSetup());
             }
@@ -199,14 +194,9 @@ namespace MedicalTerminology.Managers
         /// Wait for SceneSetup to assign references, then start the game.
         /// </summary>
         private IEnumerator InitializeAfterSceneSetup()
-        {
-            Debug.Log("[GameManager] Waiting for SceneSetup...");
-            
+        {            
             // Wait briefly for SceneSetup.Start() to run and assign references
-            yield return new WaitForSeconds(0.1f);
-            
-            Debug.Log("[GameManager] SceneSetup should be complete, starting game...");
-            
+            yield return new WaitForSeconds(0.1f);            
             // Now run the game initialization
             yield return StartGameDelayed();
         }
@@ -234,7 +224,6 @@ namespace MedicalTerminology.Managers
 
             if (dataManager == null)
             {
-                Debug.LogError("[UnifiedGameManager] CardDataManager not assigned!");
                 yield break;
             }
 
@@ -261,30 +250,21 @@ namespace MedicalTerminology.Managers
         }
 
         private void StartStudySession()
-        {
-            Debug.Log("[GameManager] === StartStudySession() BEGIN ===");
-            
+        {            
             _currentScore = 0;
             _currentTime = levelTime;
             _isGameActive = true;
             _completedMissionIds.Clear();
             _missionUiMap.Clear();
-
-            Debug.Log($"[GameManager] Study session initialized - Time: {levelTime}s, Active: {_isGameActive}");
+            _missionContentMap.Clear();
 
             GenerateMissionList();
-            Debug.Log("[GameManager] After GenerateMissionList()");
-            
             CreateChecklistUI();
-            Debug.Log("[GameManager] After CreateChecklistUI()");
             
             UpdateScoreUI();
             UpdateProgressUI();
 
-            Debug.Log("[GameManager] Calling PickNewActiveMissionAndSpawn()...");
-            PickNewActiveMissionAndSpawn();
-            
-            Debug.Log("[GameManager] === StartStudySession() END ===");
+            PickNewActiveMissionAndSpawn();            
         }
 
         public void StartNewWave()
@@ -312,34 +292,32 @@ namespace MedicalTerminology.Managers
         }
 
         private void PickNewActiveMissionAndSpawn()
-        {
-            Debug.Log("[GameManager] === PickNewActiveMissionAndSpawn() BEGIN ===");
-            
+        {            
             ClearBoard();
-            Debug.Log("[GameManager] Board cleared");
-
             var pendingMissions = _missionList.Where(x => !_completedMissionIds.Contains(x.idvalue)).ToList();
-            Debug.Log($"[GameManager] Pending missions: {pendingMissions.Count} / {_missionList.Count}");
-
             if (pendingMissions.Count == 0)
             {
-                Debug.Log("[GameManager] No pending missions - EndGame()");
                 EndGame(); // Victory
                 return;
             }
 
             _currentTarget = pendingMissions[Random.Range(0, pendingMissions.Count)];
-            Debug.Log($"[GameManager] Selected target: {(_currentTarget != null ? _currentTarget.stringvalue : "NULL")}");
-
-            // Set default mission type for Study Mode (e.g., Translate VN -> EN)
-            _currentMissionType = MissionType.TargetWord_VN; 
+            // Display the SAME question content as shown in scrollview
+            if (_missionContentMap.TryGetValue(_currentTarget.idvalue, out string storedContent))
+            {
+                if (questionContentText != null)
+                {
+                    questionContentText.SetText(storedContent);
+                }
+            }
+            else
+            {
+                // Fallback: Use SetupMissionUI if content not found
+                _currentMissionType = MissionType.TargetWord_VN; 
+                SetupMissionUI();
+            }
             
-            // Update UI
-            SetupMissionUI();
-            
-            Debug.Log("[GameManager] Calling SpawnTokens()...");
             SpawnTokens(_currentTarget);
-            Debug.Log("[GameManager] === PickNewActiveMissionAndSpawn() END ===");
         }
 
         #endregion
@@ -365,14 +343,12 @@ namespace MedicalTerminology.Managers
                 _missionList.Add(word);
             }
 
-            Debug.Log($"[UnifiedGameManager] Generated {_missionList.Count} missions");
         }
 
         private void CreateChecklistUI()
         {
             if (checklistContent == null || missionItemPrefab == null)
             {
-                Debug.LogWarning("[UnifiedGameManager] Checklist UI not configured for Study mode");
                 return;
             }
 
@@ -404,6 +380,7 @@ namespace MedicalTerminology.Managers
                     string displayContent = GenerateMissionDescription(word);
                     itemUI.Setup(i + 1, word.idvalue, displayContent);
                     _missionUiMap[word.idvalue] = itemUI;
+                    _missionContentMap[word.idvalue] = displayContent; // Store for later reuse
                 }
             }
         }
@@ -489,64 +466,169 @@ namespace MedicalTerminology.Managers
 
         private void SpawnTokens(WordModel targetWord)
         {
-            Debug.Log($"[GameManager] === SpawnTokens() BEGIN === Target: {(targetWord != null ? targetWord.stringvalue : "NULL")}");
             
             if (targetWord == null)
             {
-                Debug.LogError("[GameManager] SpawnTokens called with NULL targetWord!");
                 return;
             }
 
             if (cardPrefab == null)
             {
-                Debug.LogError("[GameManager] cardPrefab is NULL! Cannot spawn tokens!");
                 return;
             }
 
             if (tokenSpawnArea == null)
             {
-                Debug.LogError("[GameManager] tokenSpawnArea is NULL! Cannot spawn tokens!");
                 return;
             }
 
             List<WordModel> finalTokenList = new List<WordModel>();
 
-            // Get correct components for target word
-            List<WordModel> allSourceWords = new List<WordModel>();
-            if (dataManager.PrefixList != null) allSourceWords.AddRange(dataManager.PrefixList);
-            if (dataManager.RootList != null) allSourceWords.AddRange(dataManager.RootList);
-            if (dataManager.SuffixList != null) allSourceWords.AddRange(dataManager.SuffixList);
-
-            Debug.Log($"[GameManager] Total source words available: {allSourceWords.Count}");
-
-            foreach (var word in allSourceWords)
+            // Get CardDataSO from CardDatabase to access structure
+            CardDataSO targetCard = dataManager.CardDatabase?.GetCard(targetWord.idvalue);
+            
+            if (targetCard != null && !string.IsNullOrEmpty(targetCard.structure))
             {
-                if (word != null && !string.IsNullOrEmpty(word.idvalue))
+                Debug.Log($"[GameManager] Target card structure: {targetCard.structure}");
+                
+                // Parse structure to get component IDs
+                // Structure format examples:
+                // "R_Gastr + S_itis"
+                // "P_anti + R_bio + S_tic"
+                string[] componentIds = targetCard.structure
+                    .Replace(" ", "")
+                    .Split('+')
+                    .Select(s => s.Trim())
+                    .Where(s => !string.IsNullOrEmpty(s))
+                    .ToArray();
+                
+                Debug.Log($"[GameManager] Component IDs from structure: {string.Join(", ", componentIds)}");
+                
+                // Get all source words
+                List<WordModel> allSourceWords = new List<WordModel>();
+                if (dataManager.PrefixList != null) allSourceWords.AddRange(dataManager.PrefixList);
+                if (dataManager.RootList != null) allSourceWords.AddRange(dataManager.RootList);
+                if (dataManager.SuffixList != null) allSourceWords.AddRange(dataManager.SuffixList);
+                
+               // Debug.Log($"[GameManager] Total source words available: {allSourceWords.Count}");
+                
+                // Find matching components
+                foreach (string componentId in componentIds)
                 {
-                    if (targetWord.idvalue.Contains(word.idvalue))
+                    var component = allSourceWords.FirstOrDefault(w => 
+                        w != null && 
+                        !string.IsNullOrEmpty(w.idvalue) && 
+                        w.idvalue == componentId);
+                    
+                    if (component != null)
                     {
-                        if (!finalTokenList.Exists(x => x.idvalue == word.idvalue))
+                        if (!finalTokenList.Exists(x => x.idvalue == component.idvalue))
                         {
-                            finalTokenList.Add(word);
-                            Debug.Log($"[GameManager] Added correct component: {word.stringvalue} ({word.idvalue})");
+                            finalTokenList.Add(component);
+                          //  Debug.Log($"[GameManager] ✅ Added correct component: {component.stringvalue} ({component.idvalue})");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[GameManager] ⚠️ Component {componentId} not found in source words!");
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"[GameManager] Target card has no structure! Falling back to ID matching...");
+                
+                // Fallback: Old logic for backward compatibility
+                List<WordModel> allSourceWords = new List<WordModel>();
+                if (dataManager.PrefixList != null) allSourceWords.AddRange(dataManager.PrefixList);
+                if (dataManager.RootList != null) allSourceWords.AddRange(dataManager.RootList);
+                if (dataManager.SuffixList != null) allSourceWords.AddRange(dataManager.SuffixList);
+
+                foreach (var word in allSourceWords)
+                {
+                    if (word != null && !string.IsNullOrEmpty(word.idvalue))
+                    {
+                        if (targetWord.idvalue.Contains(word.idvalue))
+                        {
+                            if (!finalTokenList.Exists(x => x.idvalue == word.idvalue))
+                            {
+                                finalTokenList.Add(word);
+                                Debug.Log($"[GameManager] Added component (fallback): {word.stringvalue} ({word.idvalue})");
+                            }
                         }
                     }
                 }
             }
 
-            Debug.Log($"[GameManager] Correct components found: {finalTokenList.Count}");
+         //   Debug.Log($"[GameManager] Correct components found: {finalTokenList.Count}");
 
-            // Add distractor tokens
-            int slotsToFill = 6 - finalTokenList.Count;
-            if (slotsToFill > 0)
+            // SMART DISTRACTOR SYSTEM: Add helpful components from other mission questions
+            int targetTokenCount = finalTokenList.Count + 3; // Correct + ~3 distractors
+            
+            // Step 1: Add components from OTHER missions in the list (helpful hints!)
+            if (gameMode == GameMode.Study && _missionList != null && _missionList.Count > 1)
             {
-                Debug.Log($"[GameManager] Adding {slotsToFill} distractor tokens...");
-                var randomTokens = dataManager.GetRandomTokens(slotsToFill + 4);
+                // Get 1-2 other missions
+                var otherMissions = _missionList
+                    .Where(m => m != null && m.idvalue != targetWord.idvalue)
+                    .OrderBy(x => Random.value)
+                    .Take(2)
+                    .ToList();
+                
+                foreach (var otherMission in otherMissions)
+                {
+                    if (finalTokenList.Count >= targetTokenCount) break;
+                    
+                    // Get components from this other mission
+                    CardDataSO otherCard = dataManager.CardDatabase?.GetCard(otherMission.idvalue);
+                    if (otherCard != null && !string.IsNullOrEmpty(otherCard.structure))
+                    {
+                        string[] otherComponents = otherCard.structure
+                            .Replace(" ", "")
+                            .Split('+')
+                            .Select(s => s.Trim())
+                            .Where(s => !string.IsNullOrEmpty(s))
+                            .ToArray();
+                        
+                        // Add components from other mission (helpful distractors)
+                        var allSourceWords = new List<WordModel>();
+                        if (dataManager.PrefixList != null) allSourceWords.AddRange(dataManager.PrefixList);
+                        if (dataManager.RootList != null) allSourceWords.AddRange(dataManager.RootList);
+                        if (dataManager.SuffixList != null) allSourceWords.AddRange(dataManager.SuffixList);
+                        
+                        foreach (string compId in otherComponents)
+                        {
+                            if (finalTokenList.Count >= targetTokenCount) break;
+                            
+                            var comp = allSourceWords.FirstOrDefault(w => w.idvalue == compId);
+                            if (comp != null && !finalTokenList.Exists(x => x.idvalue == comp.idvalue))
+                            {
+                                finalTokenList.Add(comp);
+                                Debug.Log($"[GameManager] Added helpful distractor from '{otherMission.stringvalue}': {comp.idvalue}");
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Step 2: Add 1-2 pure random distractors (to maintain some difficulty)
+            int pureDistractorsNeeded = targetTokenCount - finalTokenList.Count;
+            pureDistractorsNeeded = Mathf.Clamp(pureDistractorsNeeded, 1, 2); // Limit to 1-2
+            
+            if (pureDistractorsNeeded > 0)
+            {
+                var randomTokens = dataManager.GetRandomTokens(pureDistractorsNeeded + 3);
+                int added = 0;
+                
                 foreach (var randomWord in randomTokens)
                 {
-                    if (finalTokenList.Count < 6 && !finalTokenList.Exists(x => x.idvalue == randomWord.idvalue))
+                    if (added >= pureDistractorsNeeded) break;
+                    
+                    if (!finalTokenList.Exists(x => x.idvalue == randomWord.idvalue))
                     {
                         finalTokenList.Add(randomWord);
+                        added++;
+                        Debug.Log($"[GameManager] Added random distractor: {randomWord.idvalue}");
                     }
                 }
             }
@@ -578,16 +660,44 @@ namespace MedicalTerminology.Managers
                 }
             }
             
-            Debug.Log($"[GameManager] ✅ Spawned {spawnedCount} tokens in {tokenSpawnArea.name}");
-            Debug.Log("[GameManager] === SpawnTokens() END ===");
         }
 
         public void CheckSlots()
         {
             if (!_isGameActive) return;
 
-            string combinedID = "";
+            // Get CardDataSO to access structure
+            if (_currentTarget == null)
+            {
+                Debug.LogWarning("[CheckSlots] No current target!");
+                return;
+            }
 
+            CardDataSO targetCard = dataManager.CardDatabase?.GetCard(_currentTarget.idvalue);
+            
+            if (targetCard == null || string.IsNullOrEmpty(targetCard.structure))
+            {
+                Debug.LogError($"[CheckSlots] Target card has no structure! ID: {_currentTarget.idvalue}");
+                return;
+            }
+
+            // Parse expected component IDs from structure
+            string[] expectedComponents = targetCard.structure
+                .Replace(" ", "")
+                .Split('+')
+                .Select(s => s.Trim())
+                .Where(s => !string.IsNullOrEmpty(s))
+                .ToArray();
+
+            Debug.Log($"[CheckSlots] ═══ CHECKING ANSWER ═══");
+            Debug.Log($"[CheckSlots] Target: {_currentTarget.stringvalue} ({_currentTarget.apologetic})");
+            Debug.Log($"[CheckSlots] Target ID: {_currentTarget.idvalue}");
+            Debug.Log($"[CheckSlots] Structure: '{targetCard.structure}'");
+            Debug.Log($"[CheckSlots] Expected components ({expectedComponents.Length}): {string.Join(", ", expectedComponents)}");
+
+            // Get placed component IDs from slots
+            List<string> placedComponents = new List<string>();
+            
             foreach (Transform slot in slotTransforms)
             {
                 if (slot.childCount > 0)
@@ -595,14 +705,61 @@ namespace MedicalTerminology.Managers
                     var cardValue = slot.GetChild(0).GetComponent<PuzzleCardValue>();
                     if (cardValue != null)
                     {
-                        combinedID += cardValue.GetModel().getcode();
+                        string componentId = cardValue.GetModel().idvalue;
+                        placedComponents.Add(componentId);
+                    }
+                }
+                else
+                {
+                    // Empty slot
+                    placedComponents.Add("");
+                }
+            }
+
+            Debug.Log($"[CheckSlots] Placed components: {string.Join(", ", placedComponents)}");
+
+            // FLEXIBLE: Filter out empty slots - accept components in ANY position!
+            List<string> nonEmptyComponents = placedComponents.Where(s => !string.IsNullOrEmpty(s)).ToList();
+            
+            if (nonEmptyComponents.Count == 0)
+            {
+                Debug.Log("[CheckSlots] ❌ No components placed yet");
+                return;
+            }
+            
+            Debug.Log($"[CheckSlots] Non-empty components: {string.Join(", ", nonEmptyComponents)}");
+
+            // Check if non-empty components match expected (in order)
+            bool isCorrect = true;
+            
+            if (nonEmptyComponents.Count != expectedComponents.Length)
+            {
+                Debug.Log($"[CheckSlots] ❌ Component count mismatch: placed {nonEmptyComponents.Count}, expected {expectedComponents.Length}");
+                isCorrect = false;
+            }
+            else
+            {
+                for (int i = 0; i < expectedComponents.Length; i++)
+                {
+                    if (nonEmptyComponents[i] != expectedComponents[i])
+                    {
+                        Debug.Log($"[CheckSlots] Mismatch at position {i}: expected '{expectedComponents[i]}', got '{(i < placedComponents.Count ? placedComponents[i] : "empty")}'");
+                        isCorrect = false;
+                        break;
                     }
                 }
             }
 
-            if (_currentTarget != null && combinedID == _currentTarget.idvalue)
+            if (isCorrect)
             {
+                Debug.Log($"[CheckSlots] ✅ ✅ ✅ CORRECT! Player answered: {string.Join(" + ", nonEmptyComponents)}");
+                Debug.Log($"[CheckSlots] ═══════════════════════");
                 OnCorrectAnswer();
+            }
+            else
+            {
+                Debug.Log($"[CheckSlots] ❌ INCORRECT or INCOMPLETE");
+                Debug.Log($"[CheckSlots] ═══════════════════════");
             }
         }
 
@@ -671,32 +828,42 @@ namespace MedicalTerminology.Managers
 
         #region User Actions
 
-        private void OnResetClick()
+        public void OnResetClick()
         {
-            if (gameMode == GameMode.Study)
+            if (_currentTarget == null)
             {
-                // Study mode: skip to next mission
-                if (_isGameActive)
+                Debug.LogWarning("[GameManager] No current target to reset!");
+                return;
+            }
+            
+            // Clear board (remove all cards from slots AND spawn area)
+            ClearBoard();
+            
+            // DIFFICULTY MECHANIC: Random chance to spawn wrong cards!
+            WordModel targetToSpawn = _currentTarget;
+            
+            // Roll dice to determine if we spawn correct or wrong cards
+            float roll = Random.value;
+            
+            if (gameMode == GameMode.Study && roll < wrongSpawnChance)
+            {
+                // TRICKY! Spawn cards for a DIFFERENT question
+                var otherMissions = _missionList
+                    .Where(m => m != null && m.idvalue != _currentTarget.idvalue)
+                    .ToList();
+                
+                if (otherMissions.Count > 0)
                 {
-                    PickNewActiveMissionAndSpawn();
+                    targetToSpawn = otherMissions[Random.Range(0, otherMissions.Count)];
+                    Debug.Log($"😈 [GameManager] Tricky spawn! Question: {_currentTarget.stringvalue}, Cards: {targetToSpawn.stringvalue}");
                 }
             }
-            else
-            {
-                // Puzzle mode: return cards to spawn area
-                foreach (Transform slot in slotTransforms)
-                {
-                    if (slot.childCount > 0)
-                    {
-                        Transform card = slot.GetChild(0);
-                        card.SetParent(tokenSpawnArea);
-                        card.localPosition = Vector3.zero;
-                        card.localRotation = Quaternion.identity;
-                        card.localScale = Vector3.one;
-                    }
-                }
-            }
+            
+            // Spawn tokens (might be for current question OR another question!)
+            SpawnTokens(targetToSpawn);
         }
+
+
 
         private void ClearBoard()
         {
@@ -776,6 +943,52 @@ namespace MedicalTerminology.Managers
             Application.Quit();
 #endif
         }
+        
+        /// <summary>
+        /// Switch to a specific mission when player clicks it in checklist.
+        /// Updates current target and spawns appropriate tokens.
+        /// </summary>
+        public void SwitchToMission(string wordId, string displayContent)
+        {
+            Debug.Log($"[GameManager] 🎯 Player selected mission: {wordId}");
+            
+            // Find the mission in the list
+            WordModel selectedMission = _missionList.FirstOrDefault(m => m.idvalue == wordId);
+            
+            if (selectedMission == null)
+            {
+                Debug.LogError($"[GameManager] Mission not found: {wordId}");
+                return;
+            }
+            
+            // Check if already completed
+            if (_completedMissionIds.Contains(wordId))
+            {
+                Debug.Log($"[GameManager] Mission {wordId} already completed!");
+                
+                // Still show the question but don't allow re-completion
+                if (questionContentText != null)
+                {
+                    questionContentText.SetText($"{displayContent}\n\n<color=green>✓ Already Completed!</color>");
+                }
+                return;
+            }
+            
+            // Update current target
+            _currentTarget = selectedMission;
+            
+            // Update UI to show the selected mission (but keep current cards!)
+            if (questionContentText != null)
+            {
+                questionContentText.SetText(displayContent);
+            }
+            
+            Debug.Log($"[GameManager] ✅ Switched to mission: {selectedMission.stringvalue} ({selectedMission.apologetic}) - Cards unchanged, use Reset to respawn");
+        }
+        
+        /// <summary>
+        /// Legacy method - kept for backward compatibility
+        /// </summary>
         public void ShowMissionDetail(string content)
         {
             if (questionContentText != null)
@@ -849,7 +1062,6 @@ namespace MedicalTerminology.Managers
             
             if (skipValidation)
             {
-                Debug.Log($"[GameManager] In {currentScene} - Skipping UI validation");
                 return;
             }
             
@@ -878,5 +1090,6 @@ namespace MedicalTerminology.Managers
         }
 
         #endregion
+
     }
 }

@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Bracing effect of a circumferential band of tooth structure. Vietnamese:
     Hi\u1EC7u \u1EE9ng v\xF2ng \xF4m th\xE2n r\u0103ng gi\xFAp t\u0103ng b\u1EC1n
     ph\u1EE5c h\xECnh"
-  _structure: "Ferrule (v\xF2ng kim lo\u1EA1i) + effect (hi\u1EC7u \u1EE9ng)"
+  _structure: R_Ferrule + S_effect

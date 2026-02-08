@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Astringent hemostatic solution. Vietnamese: Dung d\u1ECBch se ni\xEAm
     c\u1EA7m m\xE1u"
-  _structure: "Ferric (s\u1EAFt III) + sulfate"
+  _structure: R_Ferric + S_sulfate

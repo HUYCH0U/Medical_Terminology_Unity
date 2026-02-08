@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Clasp encircling tooth from undercut to occlusal origin. Vietnamese:
     M\xF3c bao quanh r\u0103ng t\u1EEB v\xF9ng undercut \u0111\u1EBFn \u0111i\u1EC3m
     xu\u1EA5t ph\xE1t"
-  _structure: Circum (quanh) + ferential (mang) + clasp
+  _structure: R_Circum + S_clasp

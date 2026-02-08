@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Agent used to control bleeding. Vietnamese: Ch\u1EA5t d\xF9ng \u0111\u1EC3
     c\u1EA7m m\xE1u"
-  _structure: "Hemo (m\xE1u) + static (ng\u1EEBng) + agent"
+  _structure: R_Hemo + S_agent

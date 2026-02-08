@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Wide chamfer providing bulk for ceramics. Vietnamese: Chamfer r\u1ED9ng
     t\u1EA1o \u0111\u1EE7 b\u1EC1 d\xE0y cho s\u1EE9"
-  _structure: "Deep (s\xE2u) + chamfer"
+  _structure: R_Deep + S_chamfer

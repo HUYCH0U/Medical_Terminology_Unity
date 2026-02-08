@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Inflammation of the ear
-  _structure: Ot + itis
+  _structure: R_Ot + S_itis

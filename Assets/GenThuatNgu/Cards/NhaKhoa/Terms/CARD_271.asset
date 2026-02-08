@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Seal at border providing denture retention. Vietnamese: V\xF9ng
     k\xEDn \u1EDF b\u1EDD gi\xFAp h\xE0m gi\u1EEF ch\u1EAFc"
-  _structure: "Peripheral (ngo\u1EA1i vi) + seal (ni\xEAm k\xEDn)"
+  _structure: R_Peripheral + S_seal

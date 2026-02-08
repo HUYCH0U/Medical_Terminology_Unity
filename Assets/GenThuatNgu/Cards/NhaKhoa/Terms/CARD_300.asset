@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Anteroposterior curvature of occlusal surfaces. Vietnamese: \u0110\u01B0\u1EDDng
     cong tr\u01B0\u1EDBc sau c\u1EE7a m\u1EB7t nhai"
-  _structure: Eponym Spee + curve
+  _structure: R_Eponym Spee + S_curve

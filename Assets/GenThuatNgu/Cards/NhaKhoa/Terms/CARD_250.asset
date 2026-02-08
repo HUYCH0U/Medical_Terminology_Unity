@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Device transferring spatial relation of maxilla to articulator.
     Vietnamese: D\u1EE5ng c\u1EE5 chuy\u1EC3n v\u1ECB tr\xED kh\xF4ng gian c\u1EE7a
     h\xE0m tr\xEAn l\xEAn gi\xE1 kh\u1EDBp"
-  _structure: "Face (m\u1EB7t) + bow (cung)"
+  _structure: R_Face + S_bow

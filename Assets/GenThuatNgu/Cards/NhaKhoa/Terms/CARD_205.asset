@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Indirect restoration covering one or more cusps. Vietnamese: Ph\u1EE5c
     h\xECnh gi\xE1n ti\u1EBFp ph\u1EE7 m\u1ED9t hay nhi\u1EC1u m\xFAi r\u0103ng"
-  _structure: "On (tr\xEAn) + lay (\u0111\u1EB7t)"
+  _structure: R_On + S_lay

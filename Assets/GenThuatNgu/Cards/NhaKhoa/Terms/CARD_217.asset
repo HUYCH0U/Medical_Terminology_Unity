@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Flat horizontal ledge margin. Vietnamese: D\u1EA1ng b\u1EDD ngang
     ph\u1EB3ng ki\u1EC3u vai"
-  _structure: Shoulder (vai) + finish line
+  _structure: R_Shoulder + S_finish line

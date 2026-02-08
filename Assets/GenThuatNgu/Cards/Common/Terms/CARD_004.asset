@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Tumor of glandular tissue
-  _structure: Aden + oma
+  _structure: R_Aden + S_oma

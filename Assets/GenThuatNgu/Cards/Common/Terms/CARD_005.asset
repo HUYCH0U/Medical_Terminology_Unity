@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Joint pain
-  _structure: Arthr + algia
+  _structure: R_Arthr + S_algia

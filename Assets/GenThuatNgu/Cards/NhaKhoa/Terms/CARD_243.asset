@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Use of dental laser to create gingival trough. Vietnamese: D\xF9ng
     laser t\u1EA1o r\xE3nh quanh b\u1EDD r\u0103ng"
-  _structure: Laser + troughing
+  _structure: R_Laser + S_troughing

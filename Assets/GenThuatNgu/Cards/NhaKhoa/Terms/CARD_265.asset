@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Overdenture supported/retained by implants. Vietnamese: H\xE0m ph\u1EE7
     \u0111\u01B0\u1EE3c n\xE2ng \u0111\u1EE1/gi\u1EEF b\u1EDFi implant"
-  _structure: Implant + supported + overdenture
+  _structure: R_Implant + S_overdenture

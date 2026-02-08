@@ -188,6 +188,7 @@ namespace MedicalTerminology.Managers
         }
 
         // Public accessors (legacy compatibility)
+        public CardDatabase CardDatabase => cardDatabase;
         public List<WordModel> PrefixList => _prefixList;
         public List<WordModel> RootList => _rootList;
         public List<WordModel> SuffixList => _suffixList;

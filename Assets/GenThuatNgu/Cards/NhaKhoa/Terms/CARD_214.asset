@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Prepared margin design of tooth for restoration. Vietnamese: \u0110\u01B0\u1EDDng
     b\u1EDD chu\u1EA9n b\u1ECB c\u1EE7a r\u0103ng cho ph\u1EE5c h\xECnh"
-  _structure: "Finish (ho\xE0n t\u1EA5t) + line (\u0111\u01B0\u1EDDng)"
+  _structure: R_Finish + S_line

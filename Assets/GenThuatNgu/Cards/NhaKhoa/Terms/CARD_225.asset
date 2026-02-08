@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Resin cement requiring separate adhesive protocol. Vietnamese: Xi
     m\u0103ng nh\u1EF1a c\u1EA7n quy tr\xECnh d\xE1n ri\xEAng"
-  _structure: "Adhesive (d\xEDnh) + resin cement"
+  _structure: R_Adhesive + S_resin cement

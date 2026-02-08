@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Inflammation of mucosa under a denture. Vietnamese: Vi\xEAm ni\xEAm
     m\u1EA1c d\u01B0\u1EDBi n\u1EC1n h\xE0m gi\u1EA3"
-  _structure: "Denture + stomatitis (vi\xEAm mi\u1EC7ng)"
+  _structure: R_Denture + S_stomatitis

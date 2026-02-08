@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Removable appliance to stabilize occlusion and protect teeth. Vietnamese:
     Kh\xED c\u1EE5 th\xE1o l\u1EAFp \u1ED5n \u0111\u1ECBnh kh\u1EDBp c\u1EAFn v\xE0
     b\u1EA3o v\u1EC7 r\u0103ng"
-  _structure: "Occlusal (kh\u1EDBp c\u1EAFn) + splint (n\u1EB9p/m\xE1ng)"
+  _structure: R_Occlusal + S_splint

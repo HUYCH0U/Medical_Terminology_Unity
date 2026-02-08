@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Common astringent for hemostasis and retraction. Vietnamese: Ch\u1EA5t
     se ni\xEAm m\u1EA1c d\xF9ng c\u1EA7m m\xE1u/co n\u01B0\u1EDBu"
-  _structure: Aluminum + chloride
+  _structure: R_Aluminum + S_chloride

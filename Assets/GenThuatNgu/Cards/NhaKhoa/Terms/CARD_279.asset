@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Component resisting rotation around fulcrum line. Vietnamese: B\u1ED9
     ph\u1EADn ch\u1ED1ng xoay quanh \u0111\u01B0\u1EDDng tr\u1EE5c b\u1EA3n l\u1EC1"
-  _structure: "Indirect (gi\xE1n ti\u1EBFp) + retainer"
+  _structure: R_Indirect + S_retainer

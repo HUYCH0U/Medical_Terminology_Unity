@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Chemomechanical paste for sulcular displacement. Vietnamese: H\u1ED7n
     h\u1EE3p ho\xE1 c\u01A1 h\u1ECDc \u0111\u1EC3 v\xE9n khe n\u01B0\u1EDBu"
-  _structure: "Retract (k\xE9o) + -ion + paste"
+  _structure: R_Retract + S_paste

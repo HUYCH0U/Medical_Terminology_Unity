@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Area below height of contour used for clasping. Vietnamese: V\xF9ng
     n\u1EB1m d\u01B0\u1EDBi \u0111\u01B0\u1EDDng k\xEDnh l\u1EDBn nh\u1EA5t d\xF9ng
     cho m\xF3c gi\u1EEF"
-  _structure: "Under (d\u01B0\u1EDBi) + cut (c\u1EAFt)"
+  _structure: R_Under + S_cut

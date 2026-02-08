@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Articulator allowing adjustment of key parameters. Vietnamese: Gi\xE1
     kh\u1EDBp \u0111i\u1EC1u ch\u1EC9nh \u0111\u01B0\u1EE3c m\u1ED9t s\u1ED1 th\xF4ng
     s\u1ED1"
-  _structure: "Semi (b\xE1n) + adjustable + articulator"
+  _structure: R_Semi + S_articulator

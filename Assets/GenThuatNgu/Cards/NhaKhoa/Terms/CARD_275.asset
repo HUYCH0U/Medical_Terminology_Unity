@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Rest providing vertical support on occlusal surface. Vietnamese:
     G\u1EDD t\u1EF1a t\u1EA1o n\xE2ng \u0111\u1EE1 theo chi\u1EC1u d\u1ECDc tr\xEAn
     m\u1EB7t nhai"
-  _structure: "Occlusal (nhai) + rest (t\u1EF1a)"
+  _structure: R_Occlusal + S_rest

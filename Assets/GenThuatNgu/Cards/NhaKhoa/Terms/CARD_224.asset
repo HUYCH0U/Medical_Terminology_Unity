@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Resin cement that bonds without separate etch/prime. Vietnamese:
     Xi m\u0103ng nh\u1EF1a t\u1EF1 b\xE1m kh\xF4ng c\u1EA7n etch/prime ri\xEAng"
-  _structure: "Self (t\u1EF1) + adhesive (d\xEDnh) + resin cement"
+  _structure: R_Self + S_resin cement

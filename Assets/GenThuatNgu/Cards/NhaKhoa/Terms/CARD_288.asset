@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "\"Mobile fibrous alveolar ridge tissue. Vietnamese: M\xF4 s\u1ED1ng
     h\xE0m x\u01A1 m\u1EC1m"
-  _structure: Dentistry
+  _structure: R_Flabby + S_ridge

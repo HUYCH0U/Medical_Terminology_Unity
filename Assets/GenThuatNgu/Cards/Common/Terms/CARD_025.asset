@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: ic
-  _structure: Dermatology
+  _structure: P_Hypo + S_Derm

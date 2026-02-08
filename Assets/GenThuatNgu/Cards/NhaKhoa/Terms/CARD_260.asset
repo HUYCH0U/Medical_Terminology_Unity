@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "\"Device to disengage posterior teeth and relax muscles. Vietnamese:
     Kh\xED c\u1EE5 l\xE0m m\u1EA5t ch\u1EA1m r\u0103ng sau"
-  _structure: Dentistry
+  _structure: R_Anterior + S_er

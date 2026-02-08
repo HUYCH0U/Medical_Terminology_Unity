@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Prepared area to receive a rest. Vietnamese: V\xF9ng \u0111\u01B0\u1EE3c
     s\u1EEDa so\u1EA1n \u0111\u1EC3 \u0111\u1EB7t g\u1EDD t\u1EF1a"
-  _structure: "Rest + seat (ch\u1ED7 \u0111\u1EB7t)"
+  _structure: R_Rest + S_seat

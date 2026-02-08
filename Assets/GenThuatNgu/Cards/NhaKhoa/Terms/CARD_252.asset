@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Articulator allowing extensive individualized adjustments. Vietnamese:
     Gi\xE1 kh\u1EDBp \u0111i\u1EC1u ch\u1EC9nh \u0111\u1EA7y \u0111\u1EE7 theo c\xE1
     nh\xE2n"
-  _structure: "Fully (to\xE0n) + adjustable + articulator"
+  _structure: R_Fully + S_articulator

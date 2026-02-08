@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Shoulder margin modified by external bevel. Vietnamese: B\u1EDD
     vai k\xE8m v\xE1t ngo\xE0i"
-  _structure: "Shoulder + bevel (v\xE1t)"
+  _structure: R_Shoulder + S_bevel

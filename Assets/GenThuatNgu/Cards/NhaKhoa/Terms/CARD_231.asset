@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Final impression capturing definitive details. Vietnamese: L\u1EA5y
     d\u1EA5u cu\u1ED1i c\xF9ng ghi nh\u1EADn chi ti\u1EBFt chu\u1EA9n"
-  _structure: "Master (ch\xEDnh) + impression (l\u1EA5y d\u1EA5u)"
+  _structure: R_Master + S_impression

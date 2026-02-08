@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Restoration covering entire occlusal surface and cusps. Vietnamese:
     Ph\u1EE5c h\xECnh che ph\u1EE7 to\xE0n b\u1ED9 m\u1EB7t nhai v\xE0 c\xE1c m\xFAi"
-  _structure: "Over (tr\xEAn) + lay (\u0111\u1EB7t)"
+  _structure: R_Over + S_lay

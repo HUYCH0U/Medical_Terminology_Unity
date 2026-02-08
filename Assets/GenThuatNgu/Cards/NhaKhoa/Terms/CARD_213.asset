@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Amount of axial tooth structure removed. Vietnamese: L\u01B0\u1EE3ng
     m\xF4 th\xE0nh tr\u1EE5c m\xE0i b\u1ECF"
-  _structure: "Axial (tr\u1EE5c) + reduction (gi\u1EA3m)"
+  _structure: R_Axial + S_reduction

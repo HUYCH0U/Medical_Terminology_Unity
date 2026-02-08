@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Cement used to attach restoration to tooth. Vietnamese: V\u1EADt
     li\u1EC7u g\u1EAFn ph\u1EE5c h\xECnh l\xEAn r\u0103ng"
-  _structure: "Lute (g\u1EAFn) + -ing + cement"
+  _structure: R_Lute + S_cement

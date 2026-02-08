@@ -19,13 +19,13 @@ CARD_017,Cardiogram,Điện tâm đồ,,Cardio,gram,Record of heart activity,Mat
 CARD_018,Nephrology,Khoa thận học,,Nephro,logy,Study of the kidney,Biological,Common,Urology,Nephro + logy
 CARD_019,Hematology,Huyết học,,Hemato,logy,Study of blood,Biological,Common,General,Hemato + logy
 CARD_020,Biopsy,Sinh thiết,,Bio,psy,Examination of living tissue,Biological,Common,General,Bio + psy
-CARD_021,Tachycardia,Nhịp tim nhanh,Tachy,,Cardi,ia,Rapid heart rate,Biological,Common,Cardiology,Tachy + Cardi + ia
-CARD_022,Bradycardia,Nhịp tim chậm,Brady,,Cardi,ia,Slow heart rate,Biological,Common,Cardiology,Brady + Cardi + ia
-CARD_023,Pericarditis,Viêm màng ngoài tim,Peri,,Cardi,itis,Inflammation around the heart,Biological,Common,Cardiology,Peri + Cardi + itis
-CARD_024,Epigastric,Vùng thượng vị,Epi,,Gastr,ic,Above the stomach,Morphological,Common,Gastrology,Epi + Gastr + ic
-CARD_025,Hypodermic,Dưới da,Hypo,,Derm,ic,Under the skin,Morphological,Common,Dermatology,Hypo + Derm + ic
-CARD_026,Subhepatic,Dưới gan,Sub,,Hepat,ic,Below the liver,Morphological,Common,Gastrology,Sub + Hepat + ic
-CARD_027,Endocarditis,Viêm nội tâm mạc,Endo,,Cardi,itis,Inflammation of heart lining,Biological,Common,Cardiology,Endo + Cardi + itis
-CARD_028,Hyperglycemia,Đường huyết cao,Hyper,,Glyc,emia,High blood sugar,Biological,Common,Endocrinology,Hyper + Glyc + emia
-CARD_029,Hypoglycemia,Đường huyết thấp,Hypo,,Glyc,emia,Low blood sugar,Biological,Common,Endocrinology,Hypo + Glyc + emia
-CARD_030,Polyneuritis,Viêm đa dây thần kinh,Poly,,Neur,itis,Inflammation of multiple nerves,Biological,Common,Neurology,Poly + Neur + itis
+CARD_021,Tachycardia,Nhịp tim nhanh,Tachy,Cardio,,Rapid heart rate,Biological,Common,Cardiology,Tachy + Cardio
+CARD_022,Bradycardia,Nhịp tim chậm,Brady,Cardio,,Slow heart rate,Biological,Common,Cardiology,Brady + Cardio
+CARD_023,Pericarditis,Viêm màng ngoài tim,Peri,Cardio,itis,Inflammation around the heart,Biological,Common,Cardiology,Peri + Cardio + itis
+CARD_024,Epigastric,Vùng thượng vị,Epi,Gastr,ic,Above the stomach,Morphological,Common,Gastrology,Epi + Gastr + ic
+CARD_025,Hypodermic,Dưới da,Hypo,Derm,ic,Under the skin,Morphological,Common,Dermatology,Hypo + Derm + ic
+CARD_026,Subhepatic,Dưới gan,Sub,Hepat,ic,Below the liver,Morphological,Common,Gastrology,Sub + Hepat + ic
+CARD_027,Endocarditis,Viêm nội tâm mạc,Endo,Cardio,itis,Inflammation of heart lining,Biological,Common,Cardiology,Endo + Cardio + itis
+CARD_028,Hyperglycemia,Đường huyết cao,Hyper,Glyc,emia,High blood sugar,Biological,Common,Endocrinology,Hyper + Glyc + emia
+CARD_029,Hypoglycemia,Đường huyết thấp,Hypo,Glyc,emia,Low blood sugar,Biological,Common,Endocrinology,Hypo + Glyc + emia
+CARD_030,Polyneuritis,Viêm đa dây thần kinh,Poly,Neuro,itis,Inflammation of multiple nerves,Biological,Common,Neurology,Poly + Neuro + itis

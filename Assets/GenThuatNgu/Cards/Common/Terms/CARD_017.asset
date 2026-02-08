@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Record of heart activity
-  _structure: Cardio + gram
+  _structure: R_Cardio + S_gram

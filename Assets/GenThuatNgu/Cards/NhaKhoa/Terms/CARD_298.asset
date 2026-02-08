@@ -25,4 +25,4 @@ MonoBehaviour:
   _description: "Instrument to align occlusal plane with facial references. Vietnamese:
     D\u1EE5ng c\u1EE5 c\u0103n m\u1EB7t ph\u1EB3ng c\u1EAFn theo m\u1ED1c ngo\xE0i
     m\u1EB7t"
-  _structure: "Fox (t\xEAn ri\xEAng) + plane guide"
+  _structure: R_Fox + S_plane guide

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Seal at junction of hard and soft palate. Vietnamese: V\xF9ng ni\xEAm
     k\xEDn n\u1ED1i kh\u1EA9u c\xE1i c\u1EE9ng v\xE0 m\u1EC1m"
-  _structure: Posterior + palatal + seal
+  _structure: R_Posterior + S_seal

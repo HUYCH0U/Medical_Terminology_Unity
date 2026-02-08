@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Action opposing clasp force to stabilize tooth. Vietnamese: T\xE1c
     \u0111\u1ED9ng \u0111\u1ED1i kh\xE1ng l\u1EF1c c\u1EE7a m\xF3c \u0111\u1EC3 \u1ED5n
     \u0111\u1ECBnh r\u0103ng"
-  _structure: "Reciprocate (\u0111\u1ED1i \u1EE9ng) + -ion"
+  _structure: R_Reciprocate + S_ion

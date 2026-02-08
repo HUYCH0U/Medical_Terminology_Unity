@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Electrical cutting/coagulation to create sulcular trough. Vietnamese:
     C\u1EAFt/\u0111\u1ED1t \u0111i\u1EC7n \u0111\u1EC3 t\u1EA1o r\xE3nh quanh b\u1EDD
     r\u0103ng"
-  _structure: "Electro (\u0111i\u1EC7n) + surgery (ph\u1EABu thu\u1EADt)"
+  _structure: R_Electro + S_surgery

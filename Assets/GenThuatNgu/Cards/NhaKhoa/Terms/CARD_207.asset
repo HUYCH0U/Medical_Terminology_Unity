@@ -25,4 +25,4 @@ MonoBehaviour:
     treated tooth. Vietnamese: Ph\u1EE5c h\xECnh \u0111\u01A1n kh\u1ED1i neo gi\u1EEF
     trong bu\u1ED3ng tu\u1EF7 r\u0103ng \u0111\xE3 \u0111i\u1EC1u tr\u1ECB n\u1ED9i
     nha"
-  _structure: "Endo (trong) + crown (m\xE3o)"
+  _structure: R_Endo + S_crown

@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Plane from ala of nose to tragus used as reference. Vietnamese:
     M\u1EB7t ph\u1EB3ng t\u1EEB c\xE1nh m\u0169i \u0111\u1EBFn tai d\xF9ng l\xE0m
     m\u1ED1c"
-  _structure: Eponym Camper + plane
+  _structure: R_Eponym Camper + S_plane

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Replacing the entire denture base material. Vietnamese: Thay to\xE0n
     b\u1ED9 n\u1EC1n h\xE0m gi\u1EA3"
-  _structure: "Re- (l\u1EA1i) + base (n\u1EC1n) + -ing"
+  _structure: R_Re + S_ing

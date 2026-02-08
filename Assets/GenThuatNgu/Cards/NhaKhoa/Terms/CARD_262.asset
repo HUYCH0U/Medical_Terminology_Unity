@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Prosthesis replacing all teeth of an arch. Vietnamese: Ph\u1EE5c
     h\xECnh thay th\u1EBF to\xE0n b\u1ED9 r\u0103ng c\u1EE7a m\u1ED9t h\xE0m"
-  _structure: "Complete (to\xE0n) + denture"
+  _structure: R_Complete + S_denture

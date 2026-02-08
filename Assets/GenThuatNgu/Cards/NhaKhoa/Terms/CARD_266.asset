@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Viscoelastic material to treat abused tissues under dentures. Vietnamese:
     V\u1EADt li\u1EC7u \u0111\xE0n nh\u1EDB d\xF9ng c\u1EA3i thi\u1EC7n m\xF4 d\u01B0\u1EDBi
     h\xE0m gi\u1EA3"
-  _structure: "Tissue (m\xF4) + condition (\u0111i\u1EC1u ki\u1EC7n) + -er"
+  _structure: R_Tissue + S_er

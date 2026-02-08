@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "\"Very thin tapered margin design. Vietnamese: Thi\u1EBFt k\u1EBF
     b\u1EDD r\u1EA5t m\u1EA3nh"
-  _structure: Dentistry
+  _structure: R_Knife + S_edge

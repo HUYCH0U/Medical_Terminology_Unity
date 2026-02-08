@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Positive replica used to fabricate restoration. Vietnamese: M\u1EABu
     d\u01B0\u01A1ng d\xF9ng \u0111\u1EC3 ch\u1EBF t\xE1c ph\u1EE5c h\xECnh"
-  _structure: "Work (l\xE0m) + cast (\u0111\u1ED5 m\u1EABu)"
+  _structure: R_Work + S_cast

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Luting agent for provisional restorations. Vietnamese: V\u1EADt
     li\u1EC7u g\u1EAFn d\xE0nh cho ph\u1EE5c h\xECnh t\u1EA1m"
-  _structure: "Temporary (t\u1EA1m) + cement (xi m\u0103ng)"
+  _structure: R_Temporary + S_cement

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Record of maxillomandibular relationship. Vietnamese: Ghi t\u01B0\u01A1ng
     quan hai h\xE0m"
-  _structure: "Inter (gi\u1EEFa) + occlusal (kh\u1EDBp c\u1EAFn) + record"
+  _structure: R_Inter + S_record

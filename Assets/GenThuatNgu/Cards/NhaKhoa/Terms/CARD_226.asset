@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Polymerization by light and chemical mechanisms. Vietnamese: Tr\xF9ng
     h\u1EE3p b\u1EB1ng quang v\xE0 ho\xE1 \u0111\u1ED3ng th\u1EDDi"
-  _structure: "Dual (k\xE9p) + cure (tr\xF9ng h\u1EE3p)"
+  _structure: R_Dual + S_cure

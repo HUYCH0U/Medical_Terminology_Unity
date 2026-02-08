@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Cord placed in sulcus to displace gingiva and control fluids. Vietnamese:
     S\u1EE3i ch\u1EC9 \u0111\u1EB7t v\xE0o khe n\u01B0\u1EDBu \u0111\u1EC3 v\xE9n
     m\xF4 v\xE0 ki\u1EC3m so\xE1t d\u1ECBch"
-  _structure: "Gingiv (n\u01B0\u1EDBu) + retraction (k\xE9o) + cord (s\u1EE3i)"
+  _structure: R_Gingiv + S_cord

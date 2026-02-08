@@ -235,8 +235,29 @@ namespace MedicalTerminology.Editor
             string subfolder = GetSubfolderByType(WordType.Term);
             EnsureFolderExists(subfolder);
             
+            // 🛡️ VALIDATION: Detect potential column errors
+            ValidateComponentColumns(id, prefix, root, suffix);
+            
             // SMART COMPONENT EXTRACTION: Auto-create Prefix/Root/Suffix components
             AutoCreateComponents(prefix, root, suffix, categoryStr, rarityStr, specialtyStr, componentCache);
+            
+            // BUILD CORRECT STRUCTURE STRING using actual component IDs
+            List<string> structureParts = new List<string>();
+            if (!string.IsNullOrEmpty(prefix))
+            {
+                structureParts.Add(GenerateComponentId(prefix, WordType.Prefix));
+            }
+            if (!string.IsNullOrEmpty(root))
+            {
+                structureParts.Add(GenerateComponentId(root, WordType.Root));
+            }
+            if (!string.IsNullOrEmpty(suffix))
+            {
+                structureParts.Add(GenerateComponentId(suffix, WordType.Suffix));
+            }
+            
+            // Generate structure: "P_xxx + R_xxx + S_xxx"
+            string generatedStructure = string.Join(" + ", structureParts);
             
             // Check if already exists
             string assetPath = $"{subfolder}/{id}.asset";
@@ -260,13 +281,15 @@ namespace MedicalTerminology.Editor
             SetPrivateField(card, "_termEnglish", termEn);
             SetPrivateField(card, "_termVietnamese", termVn);
             SetPrivateField(card, "_description", description);
-            SetPrivateField(card, "_structure", structure);
+            SetPrivateField(card, "_structure", generatedStructure); // ← Use GENERATED structure!
             SetPrivateField(card, "_category", ParseEnum<CardCategory>(categoryStr));
             SetPrivateField(card, "_wordType", WordType.Term);
             SetPrivateField(card, "_rarity", ParseEnum<CardRarity>(rarityStr));
             SetPrivateField(card, "_specialty", ParseEnum<MedicalSpecialty>(specialtyStr));
 
             EditorUtility.SetDirty(card);
+            
+            Log($"  → Structure: {generatedStructure}");
         }
 
         /// <summary>
@@ -476,6 +499,59 @@ namespace MedicalTerminology.Editor
             logMessage += $"[ERROR] {message}\n";
             errors++;
             Repaint();
+        }
+        
+        /// <summary>
+        /// Validates that components are in correct columns.
+        /// Detects common mistakes like roots in suffix column.
+        /// </summary>
+        private void ValidateComponentColumns(string cardId, string prefix, string root, string suffix)
+        {
+            bool hasWarning = false;
+            
+            // Rule 1: Roots usually start with uppercase (Cardio, Neuro, Gastr)
+            // If suffix starts with uppercase → likely a root in wrong column!
+            if (!string.IsNullOrEmpty(suffix) && char.IsUpper(suffix[0]))
+            {
+                LogError($"⚠️ [{cardId}] Suffix '{suffix}' starts with UPPERCASE → Likely a ROOT in suffix column! " +
+                        $"Move to Root column.");
+                hasWarning = true;
+            }
+            
+            // Rule 2: Prefixes usually start with uppercase (Hyper, Hypo, Poly)
+            // If root is empty but suffix has uppercase → data in wrong columns!
+            if (string.IsNullOrEmpty(root) && !string.IsNullOrEmpty(suffix) && char.IsUpper(suffix[0]))
+            {
+                LogError($"⚠️ [{cardId}] Root is EMPTY but Suffix is '{suffix}' (uppercase) → " +
+                        $"Move Suffix '{suffix}' to Root column!");
+                hasWarning = true;
+            }
+            
+            // Rule 3: Common medical roots (help detect mistakes)
+            string[] commonRoots = { "Cardio", "Cardi", "Neuro", "Neur", "Gastr", "Hepat", "Derm", "Glyc" };
+            foreach (string commonRoot in commonRoots)
+            {
+                if (!string.IsNullOrEmpty(suffix) && suffix.StartsWith(commonRoot, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    LogError($"⚠️ [{cardId}] Suffix '{suffix}' looks like ROOT '{commonRoot}'! " +
+                            $"Move to Root column!");
+                    hasWarning = true;
+                    break;
+                }
+            }
+            
+            // Rule 4: If term has 3 parts but root empty → suspicious!
+            if (string.IsNullOrEmpty(root) && !string.IsNullOrEmpty(prefix) && !string.IsNullOrEmpty(suffix))
+            {
+                LogError($"⚠️ [{cardId}] Has Prefix '{prefix}' and Suffix '{suffix}' but NO Root → " +
+                        $"Check if Suffix should be in Root column!");
+                hasWarning = true;
+            }
+            
+            if (hasWarning)
+            {
+                Log($"   💡 TIP: Roots = Cardio, Neuro, Gastr (uppercase). Suffixes = itis, logy, ectomy (lowercase)");
+            }
         }
     }
 }

@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Component connecting minor parts to major connector. Vietnamese:
     B\u1ED9 ph\u1EADn n\u1ED1i c\xE1c th\xE0nh ph\u1EA7n ph\u1EE5 v\u1EDBi thanh
     n\u1ED1i l\u1EDBn"
-  _structure: "Minor (nh\u1ECF) + connector"
+  _structure: R_Minor + S_connector

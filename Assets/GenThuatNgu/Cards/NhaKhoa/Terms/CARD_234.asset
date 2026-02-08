@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Individually fabricated tray for accurate impression. Vietnamese:
     Khay ch\u1EBF ri\xEAng cho l\u1EA5y d\u1EA5u ch\xEDnh x\xE1c"
-  _structure: "Custom (c\xE1 nh\xE2n) + tray (khay)"
+  _structure: R_Custom + S_tray

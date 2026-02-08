@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Shaping impression borders to capture functional depth. Vietnamese:
     N\u1EAFn t\u1EA1o b\u1EDD l\u1EA5y d\u1EA5u theo ch\u1EE9c n\u0103ng"
-  _structure: "Border (b\u1EDD) + mold (n\u1EAFn) + -ing"
+  _structure: R_Border + S_ing

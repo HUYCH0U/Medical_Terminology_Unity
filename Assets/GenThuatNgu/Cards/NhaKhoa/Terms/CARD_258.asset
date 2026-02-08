@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Difference between VDR and VDO. Vietnamese: Hi\u1EC7u s\u1ED1 gi\u1EEFa
     VDR v\xE0 VDO"
-  _structure: "Freeway (kho\u1EA3ng) + space"
+  _structure: R_Freeway + S_space

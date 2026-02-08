@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Inflammation of the kidney
-  _structure: Nephr + itis
+  _structure: R_Nephr + S_itis

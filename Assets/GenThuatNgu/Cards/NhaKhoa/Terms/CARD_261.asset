@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "\"Prosthesis replacing some teeth; removable by patient. Vietnamese:
     Ph\u1EE5c h\xECnh thay th\u1EBF m\u1ED9t s\u1ED1 r\u0103ng"
-  _structure: Dentistry
+  _structure: R_Removable + S_denture

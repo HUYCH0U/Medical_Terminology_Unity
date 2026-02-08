@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Chemical polymerization without light. Vietnamese: Tr\xF9ng h\u1EE3p
     ho\xE1 h\u1ECDc kh\xF4ng c\u1EA7n \xE1nh s\xE1ng"
-  _structure: "Self (t\u1EF1) + cure"
+  _structure: R_Self + S_cure

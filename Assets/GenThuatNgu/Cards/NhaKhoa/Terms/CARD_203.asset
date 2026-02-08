@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Thin ceramic facing bonded to facial surface. Vietnamese: T\u1EA5m
     s\u1EE9 m\u1ECFng d\xE1n b\u1EC1 m\u1EB7t ngo\xE0i r\u0103ng"
-  _structure: "Porcelain (s\u1EE9) + veneer (\u1ED1p ph\u1EE7)"
+  _structure: R_Porcelain + S_veneer

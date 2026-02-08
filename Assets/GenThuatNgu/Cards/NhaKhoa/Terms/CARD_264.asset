@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Denture supported by retained roots or implants. Vietnamese: H\xE0m
     th\xE1o l\u1EAFp t\u1EF1a tr\xEAn ch\xE2n r\u0103ng c\xF2n gi\u1EEF ho\u1EB7c
     implant"
-  _structure: "Over (ph\u1EE7) + denture"
+  _structure: R_Over + S_denture

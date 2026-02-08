@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Distance between selected points when teeth in contact. Vietnamese:
     Kho\u1EA3ng c\xE1ch gi\u1EEFa c\xE1c \u0111i\u1EC3m ch\u1ECDn khi c\u1EAFn kh\xEDt"
-  _structure: "Vertical (d\u1ECDc) + dimension (k\xEDch th\u01B0\u1EDBc)"
+  _structure: R_Vertical + S_dimension

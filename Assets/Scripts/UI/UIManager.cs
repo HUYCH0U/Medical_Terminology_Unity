@@ -72,6 +72,16 @@ namespace MedicalTerminology.UI
                 Debug.LogError("[UIManager] GameManager not found!");
             }
         }
+        public void ResetButton(){
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnResetClick();
+            }
+            else
+            {
+                Debug.LogError("[UIManager] GameManager not found!");
+            }   
+        }
 
         public void QuitApplication()
         {

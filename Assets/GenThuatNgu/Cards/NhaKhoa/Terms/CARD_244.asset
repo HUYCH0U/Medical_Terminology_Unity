@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Syringe to inject light-body material around margins. Vietnamese:
     \u1ED0ng ti\xEAm b\u01A1m v\u1EADt li\u1EC7u \u0111\u1ED9 ch\u1EA3y quanh b\u1EDD"
-  _structure: Impression + syringe
+  _structure: R_Impression + S_syringe

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Parallel surface guiding path of insertion. Vietnamese: M\u1EB7t
     song song d\u1EABn h\u01B0\u1EDBng \u0111\u01B0\u1EDDng th\xE1o l\u1EAFp"
-  _structure: "Guide (h\u01B0\u1EDBng d\u1EABn) + plane (m\u1EB7t)"
+  _structure: R_Guide + S_plane

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Rounded concave margin form. Vietnamese: D\u1EA1ng b\u1EDD l\xF5m
     tr\xF2n ki\u1EC3u chamfer"
-  _structure: "Chamfer (v\xE1t l\xF5m) + finish line"
+  _structure: R_Chamfer + S_finish line

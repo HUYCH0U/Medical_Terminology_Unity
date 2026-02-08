@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Study of X-rays and imaging
-  _structure: Radio + logy
+  _structure: R_Radio + S_logy

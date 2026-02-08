@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Part of denture contacting oral mucosa and supporting teeth. Vietnamese:
     Ph\u1EA7n h\xE0m ti\u1EBFp x\xFAc ni\xEAm m\u1EA1c v\xE0 n\xE2ng \u0111\u1EE1
     r\u0103ng gi\u1EA3"
-  _structure: Denture + base
+  _structure: R_Denture + S_base

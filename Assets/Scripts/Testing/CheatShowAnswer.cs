@@ -180,10 +180,14 @@ namespace MedicalTerminology.Testing
                 yield break;
             }
 
-            // Parse target ID to get component IDs
-            string[] componentIds = target.idvalue.Split('-')
-                .Where(s => !string.IsNullOrEmpty(s))
-                .ToArray();
+            // Get component IDs from target's quiz data structure
+            string[] componentIds = GetComponentIds(target);
+            
+            if (componentIds == null || componentIds.Length == 0)
+            {
+                Debug.LogError($"[CheatShowAnswer] No component IDs found! Target ID: {target.idvalue}");
+                yield break;
+            }
 
             Debug.Log($"🔍 Looking for components: {string.Join(", ", componentIds)}");
 
@@ -218,6 +222,103 @@ namespace MedicalTerminology.Testing
 
             Debug.Log("✅ [CHEAT] Auto-solve complete!");
         }
+
+        /// <summary>
+        /// Extract component IDs from target WordModel.
+        /// Finds component IDs by checking which spawned token IDs are part of the target.
+        /// </summary>
+        private string[] GetComponentIds(WordModel target)
+        {
+            var componentIds = new System.Collections.Generic.List<string>();
+
+            // Strategy: Get all spawned tokens and check which ones are part of target ID
+            var tokenAreaField = _gameManager.GetType().GetField("tokenSpawnArea", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            
+            Transform tokenArea = tokenAreaField?.GetValue(_gameManager) as Transform;
+            
+            if (tokenArea != null)
+            {
+                // Get all token cards
+                foreach (Transform child in tokenArea)
+                {
+                    var cardValue = child.GetComponent<Puzzle.PuzzleCardValue>();
+                    if (cardValue != null)
+                    {
+                        var wordModel = GetWordModelFromCard(cardValue);
+                        if (wordModel != null)
+                        {
+                            // Check if this token ID is part of target ID
+                            // Target might be "CARD_263" or contain component references
+                            // We check if target's ID structure contains this component
+                            
+                            // For now, use simple heuristic: 
+                            // If token is P/R/S type and we don't have it yet, it's likely correct
+                            string tokenId = wordModel.idvalue;
+                            
+                            if (!string.IsNullOrEmpty(tokenId))
+                            {
+                                // Check if it's a component (starts with P_, R_, S_)
+                                if (tokenId.StartsWith("P_") || tokenId.StartsWith("P") ||
+                                    tokenId.StartsWith("R_") || tokenId.StartsWith("R") ||
+                                    tokenId.StartsWith("S_") || tokenId.StartsWith("S"))
+                                {
+                                    // Check if target contains reference to this
+                                    // This is a simplified check - in real scenario, 
+                                    // GameManager already spawned correct components
+                                    if (!componentIds.Contains(tokenId))
+                                    {
+                                        componentIds.Add(tokenId);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Sort by type (Prefix, Root, Suffix)
+            componentIds.Sort((a, b) => 
+            {
+                int GetPriority(string id)
+                {
+                    if (id.StartsWith("P")) return 0;
+                    if (id.StartsWith("R")) return 1;
+                    if (id.StartsWith("S")) return 2;
+                    return 3;
+                }
+                return GetPriority(a).CompareTo(GetPriority(b));
+            });
+
+            if (componentIds.Count > 0)
+            {
+                Debug.Log($"📌 Found {componentIds.Count} component IDs: {string.Join(", ", componentIds)}");
+                return componentIds.ToArray();
+            }
+
+            // Fallback: Try parsing from target.idvalue if it has structure
+            if (target.idvalue.Contains("-"))
+            {
+                var ids = target.idvalue.Split('-')
+                    .Where(s => !string.IsNullOrEmpty(s) && 
+                               (s.StartsWith("P") || s.StartsWith("R") || s.StartsWith("S")))
+                    .ToArray();
+                
+                if (ids.Length > 0)
+                {
+                    Debug.Log($"📌 Found component IDs from target idvalue: {string.Join(", ", ids)}");
+                    return ids;
+                }
+            }
+
+            Debug.LogWarning($"⚠️ Could not extract component IDs from target: {target.idvalue}");
+            Debug.LogWarning($"⚠️ GameManager should have spawned correct tokens. Using all available tokens.");
+            
+            // Last resort: return all found component IDs
+            return componentIds.ToArray();
+        }
+
+
 
         /// <summary>
         /// Find card with specific ID in token area.

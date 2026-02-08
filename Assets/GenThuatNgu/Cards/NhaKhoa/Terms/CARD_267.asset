@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Soft resilient liner on tissue surface of denture. Vietnamese: L\u1EDBp
     l\xF3t \u0111\xE0n h\u1ED3i \u1EDF m\u1EB7t ni\xEAm m\u1EA1c c\u1EE7a h\xE0m"
-  _structure: "Soft (m\u1EC1m) + liner (l\xF3t)"
+  _structure: R_Soft + S_liner

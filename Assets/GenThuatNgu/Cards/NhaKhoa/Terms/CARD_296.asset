@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Marking three widely separated points to reorient cast. Vietnamese:
     \u0110\xE1nh d\u1EA5u ba \u0111i\u1EC3m xa nhau \u0111\u1EC3 \u0111\u1ECBnh v\u1ECB
     l\u1EA1i m\u1EABu"
-  _structure: "Tri (ba) + pod (ch\xE2n) + -ization"
+  _structure: R_Tri + S_ization

@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: emia
-  _structure: Endocrinology
+  _structure: P_Hypo + S_Glyc

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Direction along which a restoration is placed or removed. Vietnamese:
     H\u01B0\u1EDBng \u0111\u1EB7t v\xE0o ho\u1EB7c th\xE1o ph\u1EE5c h\xECnh"
-  _structure: "Path (\u0111\u01B0\u1EDDng) + insertion (\u0111\u1EB7t v\xE0o)"
+  _structure: R_Path + S_insertion

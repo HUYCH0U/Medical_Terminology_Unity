@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Adhesive applied to impression tray for retention. Vietnamese: Keo
     b\xF4i l\xEAn khay \u0111\u1EC3 gi\u1EEF v\u1EADt li\u1EC7u l\u1EA5y d\u1EA5u"
-  _structure: "Tray (khay) + adhesive (d\xEDnh)"
+  _structure: R_Tray + S_adhesive

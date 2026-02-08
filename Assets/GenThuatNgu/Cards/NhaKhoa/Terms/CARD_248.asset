@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Simultaneous impression of putty and light body. Vietnamese: L\u1EA5y
     d\u1EA5u \u0111\u1ED3ng th\u1EDDi v\u1EADt li\u1EC7u putty v\xE0 \u0111\u1ED9
     ch\u1EA3y"
-  _structure: "One (m\u1ED9t) + step (th\xEC)"
+  _structure: R_One + S_step

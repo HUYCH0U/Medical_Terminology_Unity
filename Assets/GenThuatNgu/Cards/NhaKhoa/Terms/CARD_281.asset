@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Infrabulge clasp approaching undercut from gingival direction. Vietnamese:
     M\xF3c d\u01B0\u1EDBi ph\u1ED3ng \u0111i t\u1EEB h\u01B0\u1EDBng n\u01B0\u1EDBu
     v\xE0o undercut"
-  _structure: "I-bar (h\xECnh ch\u1EEF I) + clasp"
+  _structure: R_Ibar + S_clasp

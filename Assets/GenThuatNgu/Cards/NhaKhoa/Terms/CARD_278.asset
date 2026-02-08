@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Clasp assembly directly resisting dislodging forces. Vietnamese:
     C\u1EA5u ph\u1EA7n m\xF3c gi\u1EEF ch\u1ED1ng l\u1EF1c b\u1EADt h\xE0m"
-  _structure: "Direct (tr\u1EF1c ti\u1EBFp) + retainer (gi\u1EEF)"
+  _structure: R_Direct + S_retainer

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Polyvinyl siloxane elastomeric impression material. Vietnamese:
     V\u1EADt li\u1EC7u l\u1EA5y d\u1EA5u \u0111\xE0n h\u1ED3i polyvinyl siloxane"
-  _structure: "Addition (c\u1ED9ng) + silicone; PVS"
+  _structure: R_Addition + S_silicone; PVS

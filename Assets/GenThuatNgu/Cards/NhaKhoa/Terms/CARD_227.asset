@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Polymerization activated by light. Vietnamese: Tr\xF9ng h\u1EE3p
     k\xEDch ho\u1EA1t b\u1EDFi \xE1nh s\xE1ng"
-  _structure: "Light (\xE1nh s\xE1ng) + cure"
+  _structure: R_Light + S_cure

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Denture inserted at the same appointment as extractions. Vietnamese:
     H\xE0m \u0111\u1EB7t ngay sau khi nh\u1ED5 r\u0103ng"
-  _structure: "Immediate (t\u1EE9c th\xEC) + denture"
+  _structure: R_Immediate + S_denture

@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Distance between points when mandible is at rest. Vietnamese: Kho\u1EA3ng
     c\xE1ch gi\u1EEFa c\xE1c \u0111i\u1EC3m khi h\xE0m \u1EDF t\u01B0 th\u1EBF ngh\u1EC9"
-  _structure: Vertical dimension + rest
+  _structure: R_Vertical dimension + S_rest

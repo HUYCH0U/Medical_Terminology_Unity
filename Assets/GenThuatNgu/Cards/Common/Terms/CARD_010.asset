@@ -22,4 +22,4 @@ MonoBehaviour:
   _illustration: {fileID: 0}
   _iconType: {fileID: 0}
   _description: Tumor of blood vessels
-  _structure: Angi + oma
+  _structure: R_Angi + S_oma

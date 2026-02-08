@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Record of jaw relation independent of tooth contact. Vietnamese:
     Ghi t\u01B0\u01A1ng quan hai h\xE0m kh\xF4ng ph\u1EE5 thu\u1ED9c ti\u1EBFp x\xFAc
     r\u0103ng"
-  _structure: Centric relation + record
+  _structure: R_Centric relation + S_record

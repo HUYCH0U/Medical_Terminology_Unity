@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Rest\u2013Proximal plate\u2013I-bar clasp design for stress release.
     Vietnamese: Thi\u1EBFt k\u1EBF G\u1EDD t\u1EF1a\u2013B\u1EA3n g\u1EA7n\u2013M\xF3c
     I-bar gi\u1EA3m \u1EE9ng su\u1EA5t"
-  _structure: R (rest) + P (proximal plate) + I (I-bar)
+  _structure: R_R + S_I

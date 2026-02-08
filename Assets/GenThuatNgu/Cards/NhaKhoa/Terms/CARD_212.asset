@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Amount of occlusal tooth structure removed for clearance. Vietnamese:
     L\u01B0\u1EE3ng m\xF4 m\u1EB7t nhai m\xE0i \u0111\u1EC3 t\u1EA1o kho\u1EA3ng"
-  _structure: "Occlusal (nhai) + reduction (gi\u1EA3m)"
+  _structure: R_Occlusal + S_reduction

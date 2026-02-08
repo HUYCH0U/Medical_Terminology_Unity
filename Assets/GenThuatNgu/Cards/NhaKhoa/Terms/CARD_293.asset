@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Device to determine path of insertion and undercuts on cast. Vietnamese:
     Thi\u1EBFt b\u1ECB x\xE1c \u0111\u1ECBnh \u0111\u01B0\u1EDDng th\xE1o l\u1EAFp
     v\xE0 undercut tr\xEAn m\u1EABu"
-  _structure: "Survey (kh\u1EA3o s\xE1t) + -or"
+  _structure: R_Survey + S_or

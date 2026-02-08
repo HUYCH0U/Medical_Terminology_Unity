@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Replacing the intaglio surface to improve fit. Vietnamese: Thay
     b\u1EC1 m\u1EB7t trong \u0111\u1EC3 c\u1EA3i thi\u1EC7n \u0111\u1ED9 kh\xEDt"
-  _structure: "Re- (l\u1EA1i) + lining (l\xF3t)"
+  _structure: R_Re + S_lining

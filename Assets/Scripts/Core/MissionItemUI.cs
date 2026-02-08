@@ -53,11 +53,11 @@ namespace MedicalTerminology.UI
 
         private void OnItemClicked()
         {
-            // Show mission detail in main question area
+            // Show mission detail AND switch to this mission as current target
             var gameManager = FindObjectOfType<GameManager>();
             if (gameManager != null)
             {
-                gameManager.ShowMissionDetail(_content);
+                gameManager.SwitchToMission(_wordId, _content);
             }
         }
 

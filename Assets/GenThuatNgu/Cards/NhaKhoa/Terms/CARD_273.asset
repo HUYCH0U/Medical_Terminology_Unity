@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Component uniting parts of an RPD on one arch. Vietnamese: B\u1ED9
     ph\u1EADn n\u1ED1i c\xE1c ph\u1EA7n c\u1EE7a h\xE0m khung tr\xEAn c\xF9ng m\u1ED9t
     h\xE0m"
-  _structure: "Major (l\u1EDBn) + connector (n\u1ED1i)"
+  _structure: R_Major + S_connector

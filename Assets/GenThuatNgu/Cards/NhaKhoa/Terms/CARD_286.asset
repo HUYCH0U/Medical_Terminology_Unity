@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Vertical extension of denture base into vestibule. Vietnamese: Ph\u1EA7n
     n\u1EC1n h\xE0m k\xE9o d\xE0i l\xEAn ti\u1EC1n \u0111\xECnh mi\u1EC7ng"
-  _structure: "Denture + flange (g\u1EDD)"
+  _structure: R_Denture + S_flange

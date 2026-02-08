@@ -23,4 +23,4 @@ MonoBehaviour:
   _iconType: {fileID: 0}
   _description: "Nonmetal post made of fiber-reinforced resin. Vietnamese: Ch\u1ED1t
     kh\xF4ng kim lo\u1EA1i b\u1EB1ng nh\u1EF1a gia c\u01B0\u1EDDng s\u1EE3i"
-  _structure: "Fiber (s\u1EE3i) + post (ch\u1ED1t)"
+  _structure: R_Fiber + S_post

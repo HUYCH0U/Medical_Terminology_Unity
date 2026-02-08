@@ -24,4 +24,4 @@ MonoBehaviour:
   _description: "Restoration covering all axial surfaces of the clinical crown. Vietnamese:
     Ph\u1EE5c h\xECnh ph\u1EE7 to\xE0n b\u1ED9 b\u1EC1 m\u1EB7t th\xE2n r\u0103ng
     l\xE2m s\xE0ng"
-  _structure: "Full (to\xE0n) + coverage (ph\u1EE7) + crown (m\xE3o)"
+  _structure: R_Full + S_crown
